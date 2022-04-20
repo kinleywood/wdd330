@@ -1,0 +1,23 @@
+@media only screen and (min-width: 37.5em) {  
+  h1{
+    font-size: 3rem;
+  }
+  h2{
+    font-size: 2rem;
+  }
+  h3 {
+    padding-left: 1rem;
+  }
+  h4 {
+    padding-left: 2rem;
+  }
+  ol{
+    font-size: 1.3rem;
+  }
+  ul li {
+    margin-left: 2rem;
+  }
+  p{
+    padding-left: 1rem;
+  }
+}

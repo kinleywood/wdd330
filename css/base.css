@@ -1,0 +1,40 @@
+h1 {
+	font-size: 2rem;
+	padding: 1rem;
+	margin: 0;
+	background-color: bisque;
+}
+
+h2 {
+	font-size: 1.5rem;
+	padding: 1rem;
+	margin-bottom: 0;
+}
+
+ol {
+	margin-top: 0;
+	font-size: 1rem;
+}
+
+ol li {
+	color: rgb(55, 80, 126);
+}
+
+a {
+	text-decoration: none;
+	color: cornflowerblue;
+}
+a:visited {
+	color: rgb(55, 80, 126);
+}
+a:hover {
+	color: rgb(55, 80, 126);
+}
+
+.button {
+	padding: 1rem 0;
+}
+.button a {
+	padding: .5rem;
+	border: .5px solid rgb(55, 80, 126);
+}
