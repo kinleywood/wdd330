@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 330 Week 2 Notes</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/medium.css">
+    <link rel="stylesheet" href="../css/large.css">
+</head>
+<body>
+  <div class="button">
+    <a href="week2.html">Back</a>
+  </div>
+  <h1>WDD 330 Portfolio</h1>
+    <h2>Week 2 Notes</h2>
+      <h3>JavaScript: Novice To Ninja</h3>
+        <h4>(Chapter 2) Programming Basics</h4>
+        <ul>
+          <li>// single line comment</li>
+          <li>/* This is a longer comment that can span more than one line.*/</li>
+          <li>A block is a series of statements that are collected together inside curly braces {}</li>
+          <li>The 7 datatypes are: string, symbol, number, boolean, undefined, null, and object</li>
+          <li>A \ can be used to type special characters in strings: \\=\, \'=' and so forth</li>
+          <li>Properties are information about the object or value</li>
+          <li>methods perform an action on the object or value ― either to change it or to tell us something about it.</li>
+          <li>Counting starts at 0</li>
+          <li>Incrementing Values</li>
+          <ul>
+            <li>To increment by 1 use ++</li>
+            <li>To decrease by 1 use --</li>
+            <li>but points++ will return the original value then increase it by 1, whereas ++points will increase the value by 1, then return the new value:</li>
+            <li>Number += 5 will take the existing number and add 5 to it.</li>
+          </ul>
+          <li>You can check if a value is a number that can be used by using the Number.isFinite() method. This will return true if the value is a number that isn't Infinity, -Infinity or NaN:</li>
+          <li>Soft equality ==</li>
+          <li>Hard equality ===</li>
+          <li>Soft inequality !=</li>
+          <li>Hard inequality !==</li>
+          <li>Chapter Summary</li>
+          <ul>
+            <li>Comments are ignored by the program, but make your program easier to read and understand</li>
+            <li>Data types are the basic building blocks of all JavaScript programs.</li>
+            <li>There are six primitive data types: strings, symbols, numbers, Booleans, undefined and null.</li>
+            <li>Non-primitive data types, such as arrays, functions and objects, all have a type of 'object'.</li>
+            <li>Variables point to values stored in memory and are declared using the const or let keywords.</li>
+            <li>Values are assigned to variables using the = operator.</li>
+            <li>Strings and numbers have various properties and methods that provide information about them.</li>
+            <li>Symbols are unique, immutable values.</li>
+            <li>Boolean values are either true or false.</li>
+            <li>There are only seven values that are false in JavaScript and these are known as 'falsy' values.</li>
+            <li>Data types can be converted into other data types.</li>
+            <li>Type coercion is when JavaScript tries to convert a value into another data type in order to perform an operation.</li>
+            <li>Logical operators can be used to check if compound statements are true or false.</li>
+            <li>Values can be compared to see if they are equal, greater than or less than other values.</li>
+          </ul>
+        </ul>
+
+    <h4>(Chapter 3) Array's, logic, and Loops</h4>
+    <ul>
+      <li>Arrays</li>
+        <ul>
+          <li>Arrays are objects</li>
+          <li>You can manually change the length of an array</li>
+          <li>.pop() removes the last value in an array</li>
+          <li>.push('value') adds a value to the end of an array</li>
+          <li>.shift() removes the first value in an array</li>
+          <li>.unshift('value') adds an element to the beginning of the array</li>
+          <li>Splice() is a very flexible and valuable method</li>
+          <li>Numbers are also sorted alphabetically (that is, by their first digit, rather than numerically), so 9 will come after 10 when you try to sort an array of numbers:</li>
+        </ul>
+      <li>Sets</li>
+        <ul>
+          <li>Sets do not allow duplicates</li>
+            <ul>
+              <li>Although you can have 2 and '2'</li>
+            </ul>
+          <li>Use .has('value') to easily tell if a set contains something.</li>
+          <li>To remove a value from a set use .delete('value')</li>
+          <li>To remove all values from a set use .clear()</li>
+          <li>You can convert a set to an array by using Array.from(set_name);</li>
+        </ul>
+      <li>Maps</li>
+        <ul>
+          <li>Objects are limited to using strings for key values, whereas maps can use any data type as a key.</li>
+          <li>There is no efficient way to find the number of key-value pairs an object has, whereas this is easy to do with maps using the size property.O</li>
+          <li>bjects have methods that can be called (see Chapter 5) and prototypes that can be used to create a chain of inheritance (see Chapter 12), whereas maps are solely focused on the storage and retrieval of key-value pairs.</li>
+          <li>The value of an object's properties can be accessed directly, whereas maps restrict you to using the get() method to retrieve any values.</li>
+          <li>Adding Entries To Maps</li>
+            <ul>
+              <li>romanNumerals.set(1,'I');</li>
+              <li>1 is the key, I is the value</li>
+              <li>You can add multiple sets to the map: romanNumerals.set(1,'I').set(2,'II');</li>
+            </ul>
+        </ul>
+      <li>Logic</li>
+        <ul>
+          <li>Even or odd number</li>
+            <ul>
+              <li>const n = 12;<br>
+              if (n%2 === 0) {<br>
+              console.log('n is an even number');<br>
+              } else {<br>
+              console.log('n is an odd number');<br>
+              }-- 'n is an even number'
+              </li> 
+            </ul>
+          <li>Ternary Operator</li>
+            <ul>
+              <li>const n = 5;
+                n%2 === 0 ? console.log('n is an even number') : console.log('n is an odd number');<br>
+                -- 'n is an odd number'
+              </li>
+              <li>console.log(`n is a ${(n%2 === 0)? 'even' : 'odd'} number`);</li>
+            </ul>
+          <li>Switch Statements</li>
+          <li>Loops</li>
+            <ul>
+              <li>While Loops</li>
+              <li>Infinite Loops</li>
+                <ul>
+                  <li>Make sure your condition gets met!!!</li>
+                </ul>
+              <li>Do … While Loops</li>
+                <ul>
+                  <li>
+                    let bottles = 10;
+                    do {
+                      console.log(`There were ${bottles} green bottles, hanging on a wall. And if one green bottle should accidentally fall, there'd be ${bottles-1} green bottles hanging on the wall`);
+                      bottles--;
+                    } while (bottles > 0)
+                  </li>
+                </ul>
+              <li>For Loops</li>
+              <li>Looping Over Sets</li>
+              <li>Looping Over Maps</li>
+            </ul>
+        </ul>
+        <li>Chapter Summary</li>
+          <ul>
+            <li>Arrays are an ordered list of values</li>
+            <li>Multidimensional arrays are arrays that contain other arrays</li>
+            <li>Arrays have lots of methods that can be used to manipulate items in the array</li>
+            <li>Sets are new in ES6 and are ordered lists of non-duplicate values</li>
+            <li>Maps are new in ES6 and are ordered lists of key-value pairs</li>
+            <li>We can use an if and else statement to control the flow of code</li>
+            <li>The switch statement can be used instead of multiple if and else statements</li>
+            <li>A while loop and do ... while loop can be used to repeat a block of code while a condition is still true</li>
+            <li>A for loop works in a similar way to a while loop, but has a different syntax</li>
+            <li>A for-of loop can be used to iterate over an array</li>
+            <li>Sets and maps are enumerable, so can also be looped over using a for-of loop</li>
+          </ul>
+    </ul>     
+    <h4>(Chapter 4) Functions</h4>
+      <ul>
+        <li>Three ways to define a function</li>
+          <ul>
+            <li>function hello(){}</li>
+            <li>const goodbye = function(){}</li>
+            <li>const hello = () => {alert('Hello World')};</li>
+          </ul>
+        <li>To invoke a function</li>
+          <ul>
+            <li>Hello();</li>
+          </ul>
+        <li>Don’t Repeat Yourself, or DRY, is a principle of programming that specifies that every part of a program should only be written once. This avoids duplication and means there’s no need to keep multiple pieces of code up to date and in sync.</li>
+        <li>Rounding Errors</li>
+          <ul>
+            <li>You might have noticed that the answer to the last example was slightly incorrect (it should be just 3.3 recurring, with no 5 on the end). This highlights a problem when doing division in JavaScript (or calculations on any computer, for that matter). The problem stems from the fact that computers use base 2 in the background and therefore struggle to represent any fractions where the denominator is not a power of 2. This means that some division calculations can often have slight rounding errors. This usually doesn’t cause a problem, but you should be aware of it.</li>
+          </ul>
+        <li>Rest</li>
+          <ul>
+            <li>function rest(...args){}</li>
+          </ul>
+        <li>Arrow function advatages</li>
+          <ul>
+            <li>They are much less verbose than normal function declarations.</li>
+            <li>Single parameters don't need putting into parentheses.</li>
+            <li>The body of the function doesn't need placing inside a block if it's only one line.</li>
+            <li>The return keyword isn't required if the return statement is the only statement in the body of the function.</li>
+            <li>They don't bind their own value of this to the function (we'll see why this is a particularly useful property when we cover objects later in the book).</li>
+          </ul>
+        <li>Hoisting is the JavaScript interpreter’s action of moving all variable and function declarations to the top of the current scope, regardless of where they are defined.</li>
+        <li>Callback</li>
+        <li>Foreach</li>
+        <li>map</li>
+        <li>Reduce</li>
+        <li>Split</li>
+        <li>Filter</li>
+        <li>Chapter Summary</li>
+          <ul>
+            <li>Functions are first-class objects that behave the same way as other values.</li>
+            <li>Function literals can be defined using the function declaration, or by creating a function expression by assigning an anonymous function to a variable.</li>
+            <li>All functions return a value. If this is not explicitly stated, the function will return undefined.</li>
+            <li>A parameter is a value that is written in the parentheses of a function declaration and can be used like a variable inside the function’s body.</li>
+            <li>An argument is a value that is provided to a function when it is invoked.</li>
+            <li>The arguments variable is an array-like object that allows access to each argument provided to the function using index notation.</li>
+            <li>The rest operator can be used to access multiple arguments as an array.</li>
+            <li>Default arguments can be supplied to a function by assigning them to the parameters.</li>
+            <li>Arrow functions are a new shorthand notation that can used for writing anonymous functions in ES6.</li>
+            <li>Function declarations can be invoked before they are defined because they are hoisted to the top of the scope, but function expressions cannot be invoked until after they are defined.</li>
+            <li>A callback is a function that is provided as an argument to another function.   </li>
+          </ul>
+      </ul>
+</body>
+</html>
