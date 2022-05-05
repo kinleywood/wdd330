@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 330 Week 3 Notes</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/medium.css">
+    <link rel="stylesheet" href="../css/large.css">
+</head>
+<body>
+  <div class="button">
+    <a href="week3.html">Back</a>
+  </div>
+  <h1>WDD 330 Portfolio</h1>
+    <h2>Week 3 Notes</h2>
+      <h3>Object Methods: this</h3>
+      <ul>
+        <li>Object-oriented programming - When we write our code using objects to represent entities, that’s called object-oriented programming, in short: “OOP”.</li>
+        <li>To access the object, a method can use the this keyword.</li>
+        <li>The rule is simple: if obj.f() is called, then this is obj during the call of f.</li>
+        <li>Summary</li>
+        <ul>
+          <li>Functions that are stored in object properties are called “methods”.</li>
+          <li>Methods allow objects to “act” like object.doSomething().</li>
+          <li>Methods can reference the object as this.</li>
+          <li>The value of this is defined at run-time.</li>
+          <li>When a function is declared, it may use this, but that this has no value until the function is called.</li>
+          <li>A function can be copied between objects.</li>
+          <li>When a function is called in the “method” syntax: object.method(), the value of this during the call is object.    </li>
+        </ul>
+      </ul>
+<!-- New Reading -->
+      <h3>JavaScript: Novice to Ninja Chapter 5 - Objects</h3>
+      <ul>
+        <h4>Object Literals</h4>
+        <ul>
+          <li>An object in JavaScript is a self-contained set of related values and functions. </li>
+          <li>An object literal is an object that is created directly in the language by wrapping all its properties and methods in curly braces {}.</li>
+          <ul>
+            <li>Example:<br>
+              const superman = {<br>
+              name: 'Superman',<br>
+              'real name': 'Clark Kent',<br>
+              height: 75,<br>
+              weight: 235,<br>
+              hero: true,<br>
+              villain: false,<br>
+              allies: ['Batman','Supergirl','Superboy'],<br>
+              fly() {<br>
+                return 'Up, up and away!';<br>
+              }};</li>
+          </ul>
+        </ul>
+
+        <h4>Creating Objects</h4>
+        <ul>
+          <li>Create an object<br> 
+            const spiderman = {};</li>
+          <li>Dot Notation</li>
+        </ul>
+          
+        <h4>Calling Methods</h4>
+        <ul>
+          <li>Superman.fly() or superman["fly"]()</li>
+        </ul>
+
+        <h4>Checking if Properties or Methods Exist</h4>
+        <ul>
+          <li>"city" in superman; // false</li>
+          <li>Superman.city !== undefined; // false</li>
+          <li>.hasOwnProperty</li>
+        </ul>
+
+        <h4>Finding all the Properties of an Object</h4>
+        <ul>
+          <li>Object.keys()</li>
+        </ul>
+
+        <h4>Adding Properties</h4>
+        <ul>
+          <li>New properties and methods can be added to objects at any time in a program. This is done by simply assigning a value to the new property. </li>
+          <li>Superman.city = "Metropolis";</li>
+        </ul>
+
+        <h4>Changing Properties </h4>
+        <ul>
+          <li>You can change the value of an object’s properties at any time using assignment. For example, we can change the value of the "real name" property like this:</li>
+          <li>Superman["real name"] = "Kal-El";</li>
+        </ul>
+
+        <h4>Removing Properties</h4>
+        <ul>
+          <li>Delete superman.fly;</li>
+        </ul>
+
+        <h4>Nested Objects</h4>
+        <ul>
+          <li>An important concept to get your head around is that objects are assigned by reference. This means that if a variable is assigned to an object that already exists, it will simply point to the exact same space in memory. So any changes made using either reference will affect the same object.</li>
+        </ul>
+
+        <h4>Objects as Parameters to Functions</h4>
+        
+        <h4>this</h4>
+        <ul>
+          <li>The keyword this refers to the object that it is within. It can be used inside methods to gain access to the object’s properties.</li>
+        </ul>
+
+        <h4>Namespacing</h4>
+        <ul>
+          <li>You don't have to worry about having duplicate names</li>
+        </ul>
+
+        <h4>JSON</h4>
+        <ul>
+          <li>JavaScript object Notation</li>
+          <li>Property names must be double-quoted</li>
+          <li>Permitted values are double-quoted strings, numbers, true, false, null, arrays and objects</li>
+          <li>Functions are not permitted values</li>
+          <li>parse()</li>
+        </ul>
+
+        <h4>The Math Object</h4>
+        <ul>
+          <li>The Math object has eight properties that represent a mix of commonly used math constants. Note that they are all named in capital letters, as is the convention for constant values:</li>
+          <li>Math.PI </li>
+          <li>Math.SQRT2</li>
+          <li>Math.SQRT1_2</li>
+          <li>Math.E</li>
+          <li>Math.LN2</li>
+          <li>Math.LN10</li>
+          <li>Math.LOG2E</li>
+          <li>Math.LOG10E</li>
+          <li>Math.abs() - Returns the absolute value of a number</li>
+          <li>Math.Ceil - Will round a number up to the next integer</li>
+          <li>Math.floor - will round a number down to the next integer</li>
+          <li>Math.round - will round a number to the nearest integer</li>
+          <li>Math.trunc() - retruns the integer-part of a number Math.trunc(4.9); // 4</li>
+          <li>Math.exp() - will raise anumber to the power of Euler's constant</li>
+          <li>Math.pow() - will raise any number to the power of another number </li>
+          <ul>
+            <li>Math.pow(3,2); //3 squared // 9</li>
+            <li>Math.pow(4.5, 0) // Any number to the power of zero is 1 // 1</li>
+            <li>Math.pow(27, 1/3); // A nice way to do cube roots // 3</li>
+          </ul>
+          <li>Math.sqrt() - returns the positive square root of a number</li>
+          <li>Math.cbrt() - returns the cube root of numbers</li>
+          <li>Math.hypot() - returns the square root of the sum of the squares of all its arguments and can be used to calculate the hypotenuse of a right-angled triangle:</li>
+          <li>Math.log() - returns the natural logarithm of a number</li>
+          <li>Math.max() - returns the maximum number from its arguments</li>
+          <li>Math.min() - returns the minimum number from its arguments</li>
+          <li>Radians are a standard unit of angular measurement, equal to the angle of the circle’s center corresponding to the arc that subtends it.</li>
+          <li>Math.sin() - returns the sine of an angle</li>
+          <li>Math.cos() - returns the Cosine of an angle</li>
+          <li>Math.tan() - returns the tangent of an angle</li>
+          <li>Math.asin() - returns the arcsine of a number</li>
+          <li>Math.acos() - returns the arccosine of a number</li>
+          <li>Math.atan() - returns the arctangent of a number</li>
+          <li>Sinh(), asinh(), cosh(), acosh(), tanh(), atanh()</li>
+          <li>Math.random() is used to create random numbers Calling the method will generate a number between 0 (inclusive) and 1 (exclusive)</li>
+          <ul>
+            <li>6 * Math.random(); will generate a number between 0 and 6 (not including 6)</li>
+            <li>Math.floor(6 * Math.random()); will generate an integer between 0 and 6</li>
+          </ul>
+        </ul>
+
+        <h4>The Date Object</h4>
+        <ul>
+          <li>New</li>
+          <li>Const today - new Date();</li>
+          <li>Today.toString(); will show the date</li>
+          <li>There are several ways to write dates</li>
+          <li>new Date(year,month,day,hour,minutes,seconds,milliseconds)</li>
+          <li>Remember that computer programs start counting at zero, so January is 0, February is 1, and so on up to December, which is 11.</li>
+          <li>The Epoch is 1st January 1970. This is an arbitrary date that is used in programming as a reference point in time from which to measure dates. This allows dates to be expressed as an integer that represents the number of seconds since the Epoch. It results in a very large number and there is a potential problem looming in 2038 when the number of seconds since the Epoch will be greater than 2,147,483,647, which is the maximum value that many computers can deal with as a signed 32-bit integer. Fortunately, this problem will not affect JavaScript dates because it uses floating-point numbers rather than integers, so it can handle bigger values.</li>
+          <li>Getter Methods</li>
+          <ul>
+            <li>getDay() and getUTCDay() - day of the week as a number 0-6</li>
+            <li>getDate() and getUTCDate() - The day of the month (starts counting at 1 not 0)</li>
+            <li>getMonth() and getUTCMonth() - Month as an integer from 0-11</li>
+            <li>getFullYear() and getUTCFullYear() - four digit year</li>
+            <li>There are also getHours(), getUTCHours(), getMinutes(), getUTCMinutes(), getSeconds(), getUTCSeconds, getMilliseconds(), and getUTCMilliseconds() methods that will return the hours, minutes, seconds and milliseconds since midnight.</li>
+            <li>getTime() - timestamp representing the number of miliseconds since the Epoch</li>
+            <li>getTimezoneOffset() - difference in minutes between the local time on the computer and UTC</li>
+          </ul>
+          <li>Setter Methods</li>
+          <ul>
+            <li>Basically the Getter Methods except used to set the date</li>
+          </ul>
+        </ul>
+
+        <h4>The RegExp Object</h4>
+        <ul>
+          <li>Write the regular expression between two forward slashes // with new RegExp("");</li>
+          <li>test() to see if something will fit the regexp</li>
+          <li>/[A-Z]/ means any uppercase character between A and Z.</li>
+          <li>/[^A-Z]/ means any character that is not an uppercase letter.</li>
+          <li>/[Jj][aeiou]v[aeiou]/ means the letter j(upper or lower case) followed by a vowel followed by a "v" followed by a vowel.</li>
+          <li>Regular Expression Properties</li>
+          <ul>
+            <li>Global(g) - makes the pattern return all matches</li>
+            <li>ignoreCase(i) - makes the pattern case-insensitive</li>
+            <li>Multiline(m) - makes the pattern multiline</li>
+          </ul>
+          <li>Special Characters</li>
+          <ul>
+            <li>. matches any character, except line breaks</li>
+            <li>\w matches any word character, and is equivalent to [A-Za-z0-9_]</li>
+            <li>\W matches any non-word character, and is equivalent to [\^A-Za-z0-9_]</li>
+            <li>\d matches any digit character, and is equivalent to [0-9]</li>
+            <li>\D matches any non-digit character, and is equivalent to [^0-9]</li>
+            <li>\s matches any whitespace character, and is equivalent to [ \t\r\n\f]</li>
+            <li>\S matches any non-whitespace character, and is equivalent to [^ \t\r\n\f]</li>
+          </ul>
+          <li>Modifiers</li>
+          <ul>
+            <li>? makes the preceding token in the regular expression optional</li>
+            <li>* matches one or more occurrences of the preceding token</li>
+            <li>+ matches one or more occurrences of the preceding token</li>
+            <li>{n} matches n occurrences of the preceding token</li>
+            <li>{n,} matches at least n occurrences of the pattern</li>
+            <li>{,m} matches at most m occurrences of the preceding token</li>
+            <li>{n,m} matches at least n and at most m occurrences of the preceding token</li>
+            <li>^ marks the position immediately before the first character in the string</li>
+            <li>$ marks the position immediately after the last character in the string</li>
+          </ul>
+          <li>String Methods</li>
+          <ul>
+            <li>split() accepts regExp</li>
+            <li>match() returns an array of all the matches</li>
+            <li>"JavaScript".match(/[aeiou]/g);</li>
+            <li>search() returns the position of the first match and returns -1 if there is no match</li>
+            <li>replace() replaces any matches with another string</li>
+            <li>"JavaScript".replace(/[aeiou]/ig,"*"); //"J*v*Scr*pt"</li>
+          </ul>
+          <li>Matched Groups</li>
+          <ul>
+            <li>Sub-patterns can be created inside a regular expression by placing them inside parentheses. These are known as capturing groups. Any matches to these will then be stored in an array of matches.</li>
+          </ul>
+        </ul>
+
+        <h4>Chapter Summary</h4>
+        <ul>
+          <li>Objects are a collection of key-value pairs placed inside curly braces {}.</li>
+          <li>Objects have properties that can be any JavaScript value. If it’s a function, it’s known as a method.</li>
+          <li>An object’s properties and methods can be accessed using either dot notation or square bracket notation.</li>
+          <li>Objects are mutable, which means their properties and methods can be changed or removed.</li>
+          <li>Objects can be used as parameters to functions, which allows arguments to be entered in any order, or omitted.</li>
+          <li>Nested objects can be created by placing objects inside objects.</li>
+          <li>JSON is a portable data format that uses JavaScript object literals to exchange information.</li>
+          <li>The Math object gives access to a number of mathematical constants.</li>
+          <li>The Math object can be used to perform mathematical calculations.</li>
+          <li>The Date object can be used to create date objects.</li>
+          <li>Once you’ve created a Date object, you can use the getter methods to access information about that date.</li>
+          <li>Once you’ve created a Date object, setter methods can be used to change information about that date.</li>
+          <li>The Regex object can be used to create regular expressions.</li>
+        </ul>
+      </ul>
+    <!-- New Reading -->
+    <h3>JavaScript: Novice to Ninja Chapter 6 - The Document Object Model</h3>
+      <ul>
+        <h4>What is the DOM?</h4>
+        <ul>
+          <li>Allows you to access elements of a web page and enable interaction with the page by adding and removing elements</li>
+          <li>represents an HTML document as a network of connected nodes that form a tree-like structure.</li>
+        </ul>
+        <h4>An Example Web Page</h4>
+        <ul>
+          <li>Here are a couple of useful shortcuts that will help speed things up when you're using the console:</li>
+          <ul>
+            <li>Pressing TAB will autocomplete any methods and should show you a list of possible methods</li>
+            <li>Pressing the UP arrow key will select the previous command entered.</li>
+          </ul>
+        </ul>
+        <h4>Getting Elements</h4>
+        <ul>
+          <li>nodeType to find out what type of node it is.</li>
+          <ul>
+            <li>Code	Type</li>
+            <li>1	element</li>
+            <li>2	attribute</li>
+            <li>3	text</li>
+            <li>8	comment</li>
+            <li>9	body</li>
+          </ul>
+        </ul>
+        <h4>Legacy Dom Shortcut Methods</h4>
+        <ul>
+          <li>Document.body returns the body element of a web page, as we saw in the previous example.</li>
+          <li>Document.images returns a node list of all the images contained in the document.</li>
+          <li>Document.links returns a node list of all the a elements and area elements that have an href attribute.</li>
+          <li>Document.anchors returns a node list of all the a elements that have a name attribute.</li>
+          <li>Document.forms returns a node list of all the forms in the document. This will be used when we cover forms in Chapter 8.</li>
+        </ul>
+        <h4>Getting An Element By Its ID, Tag Name, Class Name</h4>
+        <ul>
+          <li>getElementByID()</li>
+          <li>Make sure you use unique id's</li>
+          <li>getElementByTagName()</li>
+          <li>Example: const listItems = document.getElementByTagName("li"); It will grab every li element in the document.</li>
+          <li>getElementByClassName()</li>
+        </ul>
+        <h4>Query Selectors</h4>
+        <ul>
+          <li>The document.querySelector() method allows you to use CSS notation to find the first element in the document that matches that matches a CSS selector provided as an argument. If no elements match, it will return null.</li>
+          <li>The document.querySelectorAll() method also uses CSS notation but returns a node list of all the elements in the document that match the CSS query selector. If no elements match, it will return an empty node list.</li>
+          <li>Pseudo-selectors</li>
+          <li>const ul = document.querySelector('ul#roster'); Now we can use the querySelector() method on this element, to find a li element with an id of 'bats':</li>
+        </ul>
+        <h4>Navigating the DOM Tree</h4>
+        <ul>
+          <li>childNodes</li>
+          <li>firstChild</li>
+          <li>lastChild </li>
+          <li>nextSibling</li>
+          <li>previousSibling</li>
+          <li>these methods find the next and previous node, not element, so they will often return a blank text node, as in the examples above.</li>
+        </ul>
+        <h4>Finding the Value of a Node</h4>
+        <ul>
+          <li>textContent or innerText </li>
+        </ul>
+        <h4>Getting and Setting Attributes</h4>
+        <ul>
+          <li>getAttribute()</li>
+          <li>setAttribute("attribute you wish to change", "new value of that attribute")</li>
+        </ul>
+        <h4>Classes Of An Element: className, classList</h4>
+        <ul>
+          <li>className allows the class of an element to be set directly. In addition, it can be used to find out the value of the class attribute:</li>
+          <li>wonderWoman.className; = "villain"</li>
+          <li>wonderWoman.className = "hero"; = "hero"</li>
+          <li>Be Careful Updating className as it will overwrite all other classes that have already been set on the element.</li>
+          <li>Use classList instead which is a list of all the classes an element has.</li>
+          <li>The add method can be used to add a class to an element without overwriting any classes that already exist.</li>
+          <li>Example: wonderWoman.classList.add("warrior"); = "hero warrior"</li>
+          <li>wonderWoman.classList.remove("warrior"); = "hero"</li>
+          <li>The toggle method is a particularly useful method that will add a class if an element doesn’t have it already, and remove the class if it does have it. It returns true if the class was added and false if it was removed.</li>
+          <li>The contains method will check to see if an element has a particular class:</li>
+        </ul>
+        <h4>Creating Dynamic Markup</h4>
+        <ul>
+          <li>Creating An Element </li>
+          <ul>
+            <li>createElement()</li>
+            <li>Example: const flash = document.createElement("li");</li>
+          </ul>
+          <li>Creating a Text Node </li>
+          <ul>
+            <li>document.createTextNode()</li>
+            <li>Example: const flashText = document.createTextNode("flash");</li>
+          </ul>
+          <li>Appending Nodes </li>
+          <ul>
+            <li>appendChild()</li>
+            <li>Example: flash.appendChild(flashText);</li>
+          </ul>
+          <li>A Function To Create Elements </li>
+          <ul>
+            <li>function createElement (tag,text) {<br>
+                const el = document.createElement(tag);<br>
+                el.textContent = text;<br>
+                return el<br>
+            }</li>
+            <li>The above function will create elements and add text to them.</li>
+          </ul>
+          <li>Adding, Removing, and Replacing Elements to and from the Page</li>
+          <ul>
+            <li>insertBefore() will place a new element before another element in the markup. It’s important to note that this method is called on the parent node.</li>
+            <li>removeChild()</li>
+            <li>replaceChild("new node", "node to be replaced")</li>
+          </ul>
+        </ul>
+        <h4>InnerHTML</h4>
+        <ul>
+          <li>.innerHTML</li>
+        </ul>
+        <h4>Live Collections</h4>
+        <ul>
+          <li>The node lists returned by the document.getElementsByClassName() and document.getElementsByTagName() methods are live collections that will update to reflect any changes on the page. For example, if a new element with the class hero is added, or an existing one is removed, the node list updates automatically without having to make another call to the method. Therefore, its use is discouraged for performance reasons, but it can be useful.</li>
+        </ul>
+        <h4>Updating CSS</h4>
+        <ul>
+          <li>Superman.style.border =  "red 2px solid";</li>
+        </ul>
+        <h4>Camel Case Properties</h4>
+        <ul>
+          <li>Any CSS property names that are separated by dashes must be written in camelCase notation, so the dash is removed and the next letter is capitalized because dashes are not legal characters in property names.</li>
+        </ul>
+        <h4>Disappearing Act</h4>
+        <ul>
+          <li>Display = none makes things disappear</li>
+        </ul>
+        <h4>Checking Style Properties</h4>
+        <ul>
+          <li>getComputeStyle()</li>
+          <li>Use With Caution </li>
+          <li>It is better to use stylesheets</li>
+        </ul>
+      </ul>
+    <!-- New Reading -->
+    <h3>JavaScript: Novice to Ninja Chapter 7 - Events</h3>
+    <ul>
+      <li>Event Listeners</li>
+      <ul>
+        <li>document.body.addEventListener("click", doSomething);</li>
+        <li>The click event occurs when a user clicks with the mouse, presses the Enter key, or taps the screen, making it a very useful all-round event covering many types of interaction.</li>
+      </ul>
+      <li>Inline Event Handlers</li>
+      <ul>
+        <li>onclick event handler: <p onclick="console.log('You Clicked Me!')">Click Me</p></li>
+        <li>Is not recommended</li>
+      </ul>
+      <li>Older Event Handlers</li>
+      <ul>
+        <li>document.onclick = function (){ console.log('You clicked on the page!'); }</li>
+        <li>This method is an improvement on the inline event handlers as it keeps the JavaScript out of the HTML markup. It is also well-supported and will work in almost all browsers. Unfortunately, it still has the restriction that only one function can be used for each event.</li>
+      </ul>
+      <li>Using Event Listeners</li>
+      <ul>
+        <li>The recommended way of dealing with events.</li>
+        <li>addEventListener("Type of Event", callback Function, third optional parameter): document.body.addEventListener('click',doSomething);</li>
+        <li>You can add an event listener to the entire page: addEventListener('click', () => alert('You Clicked!')); </li>
+        <li>Do not add parenthesis if you call an already declared function.</li>
+      </ul>
+      <li>The Event Object</li>
+      <li>Types of Event</li>
+      <li>The Event Target</li>
+      <ul>
+        <li>The target property returns a reference to the node that fired the event. </li>
+      </ul>
+      <li>Coordinates of an Event</li>
+      <ul>
+        <li>screenX show the number of pixels from the left where the event took place on the screen</li>
+        <li>screenY show the number of pixels from the top where the event took place on the screen</li>
+        <li>clientX show the number of pixels from the left of the client that is being used</li>
+        <li>clientY show the number of pixels from the top of the client that is being used</li>
+        <li>pageX show the number of pixels from the left, respectively, where the event took place in the document. </li>
+        <li>pageY show the number of pixels from the top, respectively, where the event took place in the document. </li>
+      </ul>
+      <li>Types of Events</li>
+      <ul>
+        <li>Mouse Events</li>
+        <ul>
+          <li>mousedown</li>
+          <li>mouseup </li>
+          <li>dblclick which occurs when the user doubleclicks on the element to which the event listener is attached. </li>
+          <li>You should be very cautious of attaching both a click and doubleclick event to the same element. This is because it’s impossible to tell if a click is the first click of a doubleclick or just a single click. This means that a doubleclick event will always cause the click event to fire.</li>
+          <li>mouseover occurs when the mouse pointer is placed over the element to which the event listener is attache</li>
+          <li>mouseout event occurs when the mouse pointer moves away from an element</li>
+          <li>mousemove occurs whenever the mouse moves.</li>
+        </ul>
+        <li>Keyboard Events</li>
+        <ul>
+          <li>keydown occurs when a key is pressed and will continue to occur if the key is held down.</li>
+          <li>keypress occurs after a keydown event but before a keyup event. The keypress event only occurs for keys that produce character input (plus the 'Delete' key). This means that it’s the most reliable way to find out the character that was pressed on the keyboard.</li>
+          <li>keyup occurs when a key is released.</li>
+        </ul>
+        <li>Modifier Keys</li>
+        <ul>
+          <li>Shift, Ctrl, Alt, and meta will fire the keydown and keyup events, but not the keypress event as they don't produce any characters on the screen.</li>
+          <li>shiftKey, ctrlKey, altKey, and metaKey are all properties of the event object and return true if the relevant key was held down.</li>
+          <li>Modifier keys can often already have a purpose assigned in the browser or operating system. And although it’s possible to prevent the default behavior in the browser (see later in this chapter), it’s not considered best practice to do so.</li>
+        </ul>
+        <li>Touch Events</li>
+        <ul>
+          <li>touchstart occurs when a user initially touches the surface</li>
+          <li>Be careful when using the touchstart event as it fires as soon as a user touches the screen. They may be touching the screen because they want to zoom in or swipe, and a touchstart event listener could prevent them from doing this.</li>
+          <li>The click event is often a much safer option as it still fires when the screen is touched, but there’s a slight delay of 300ms, allowing the user time to perform another action with the device. The click event can be thought of as a "tap" in the context of a touch event.</li>
+          <li>The touchend event occurs when a user stops touching the surface.</li>
+          <li>The touchmove event occurs after a user has touched the screen then moves around without leaving</li>
+          <li>The touchenter event occurs when a user has already started touching the surface, but then passes over the element to which the event listener is attached.</li>
+          <li>The touchleave event occurs when the user is still touching the surface, but leaves the element to which the event listener is attached.</li>
+          <li>The touchcancel event occurs when a touch event is interrupted, such as a user’s finger moving outside the document window, or too many fingers being used at once. A pop-up dialog will also cancel a touch event.</li>
+        </ul>
+        <li>Touch Event Properties</li>
+        <ul>
+          <li>touches property</li>
+          <li>Touch events are complex and difficult to implement. Many of the properties and methods mentioned above are still marked as being experimental and not widely implemented in browsers.</li>
+        </ul>
+      </ul>
+      <li>Removing Event Listeners</li>
+      <ul>
+        <li>removeEventListener()</li>
+      </ul>
+      <li>Stopping Default Behavior</li>
+      <ul>
+        <li>preventDefault()</li>
+      </ul>
+      <li>Event Propagation</li>
+      <ul>
+        <li>When you click on an element, you are actually clicking on all the elements it’s nested inside of. </li>
+        <li>Bubbling is when the event fires on the element clicked on first, then bubbles up the document tree, firing an event on each parent element until it reaches the root node.</li>
+        <li>Capturing starts by firing an event on the root element, then propagates downwards, firing an event on each child element until it reaches the target element that was clicked on.</li>
+      </ul>
+      <li>Bubbling</li>
+      <ul>
+        <li>Default</li>
+      </ul>
+      <li>Capturing</li>
+      <li>Stopping the Bubbling Phase</li>
+      <li>Event Delegation</li>
+      <li>Chapter Summary</li>
+      <ul>
+        <li>Events occur when a user interacts with a web page.</li>
+        <li>An event listener is attached to an element, then invokes a callback function when the event occurs.</li>
+        <li>The event object is passed to the callback function as an argument, and contains lots of properties and methods relating to the event.</li>
+        <li>There are many types of event, including mouse events, keyboard events, and touch events.</li>
+        <li>You can remove an event using the removeEventListener method.</li>
+        <li>The default behavior of elements can be prevented using the preventDefault() function.</li>
+        <li>Event propagation is the order the events fire on each element.</li>
+        <li>Event delegation is when an event listener is added to a parent element to capture events that happen to its children elements.</li>
+      </ul>
+    </ul>
+
+</body>
+</html>
