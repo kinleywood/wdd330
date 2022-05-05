@@ -35,8 +35,7 @@ const game = {
     }
   },
   gameOver(){
-    view.render(view.info, `Game Over, you scored ${this.score} pointkjwoef
-    ]${this.score !== 1 ? "s" : ""}`);
+    view.render(view.info, `Game Over, you scored ${this.score} pointC${this.score !== 1 ? "s" : ""}`);
   }
 }
 
