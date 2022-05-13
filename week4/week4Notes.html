@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 330 Week 4 Notes</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/medium.css">
+    <link rel="stylesheet" href="../css/large.css">
+</head>
+<body>
+  <div class="button">
+    <a href="week4.html">Back</a>
+  </div>
+  <h1>WDD 330 Portfolio</h1>
+    <h2>Week 4 Notes</h2>
+    <h3>JavaScript: Novice To Ninja Chapter 8 - Forms</h3>
+      <ul>
+        <h4>Forms</h4>
+        <h4>Accessing Form Elements</h4>
+          <ul>
+            <li>document.forms returns and HTML collection of all the forms in the document in the order they appear in the markup.</li>
+          </ul>
+        <h4>Form Properties and Methods</h4>
+          <ul>
+            <li>form.submit() method will submit the form automatically. This will not trigger the submit event.</li>
+            <li>You can make an image a submit button "input type="image" src="button.png""</li>
+            <li>form.reset() method will reset all the form controls back to their initial values.</li>
+            <li><span class="important">Reset buttons are generally considered poor for usability, as they are too easy to click and then wipe out all the data that's been entered.</span></li>
+            <li>form.action can be used to set the action attribute so it can be sent to a different URL to be processed</li>
+          </ul>
+        <h4>Form Events</h4>
+          <ul>
+            <li>The focus event occurs when an element is focused on.(clicking, tapping, hovering)</li>
+            <li>The blur event occurs when the user moves the vocus away from the form element.</li>
+            <li>The change event occurs when the user moves the focus away from the form after changing it.</li>
+          </ul>
+        <h4>Submitting a Form</h4>
+          <ul>
+            <li>submit occurs when the form is submited</li>
+            <li>The preventDefalut() method will stop the form from being submitted</li>
+          </ul>
+        <h4>Retrieving and Changing Values From a Form</h4>
+          <ul>
+            <li>The value property can be used to retrieve text inside of the field.</li>
+            <li>You can set the value of an input field input.value = "Search Here";</li>
+            <li>The placeholder attribute will put a placeholder that will go away when clicked on.</li>
+          </ul>
+        <h4>Form Controls</h4>
+          <ul>
+            <li>input</li>
+            <li>select</li>
+            <li>textarea</li>
+            <li>button</li>
+            <li>autofocus - gives focus to an element when the page is loaded</li>
+            <li>maxlength will limit the number of characters that can be entered</li>
+          </ul>
+        <h4>Input Fields</h4>
+          <ul>
+            <li>text - enter a short piece of text</li>
+            <li>password - enter passwords or secret info. Just like text but will be hidden like so *****</li>
+            <li>checkbox - select different options that can be checked(true) or unchecked(false)</li>
+            <li>radio - like checkboxes but only one option can be true (or selected) The name attribute must be the same.</li>
+            <li>hidden - Not displayed by the browser. Not secret.</li>
+            <li>file - used to upload files</li>
+            <li>number</li>
+            <li>tel</li>
+            <li>color</li>
+            <li>and more</li>
+          </ul>
+        <h4>Select Drop-Down List</h4>
+          <ul>
+            <li>Select drop-down lists can be used to select one or more options from a list of values.</li>
+            <li>Can be used to select initial value.</li>
+            <li>0,1,2,3,4…</li>
+          </ul>
+        <h4>Text Areas</h4>
+          <ul>
+            <li>Used to enter long pieces of text over multiple lines such as a comment or blog post.</li>
+          </ul>
+        <h4>Buttons</h4>
+          <ul>
+            <li>submit</li>
+            <li>reset</li>
+            <li>button</li>
+          </ul>
+        <h4>Form Validation</h4>
+          <ul>
+            <li>A required field is completed</li>
+            <li>An email address is valid</li>
+            <li>A number is entered when numerical data is required</li>
+            <li>A password is at least a minimum number of characters</li>
+            <li>You should validate multiple times</li>
+            <li>validateInline()</li>
+            <li>startsWith()</li>
+            <li>addError()</li>
+            <li>removeError()</li>
+          </ul>
+        <h4>Disabling the Submit Button</h4>
+          <ul>
+            <li>disabled button type='submit' id='submit' disabled Submit button</li>
+          </ul>
+        <h4>Chapter Summary</h4>
+          <ul>
+            <li>Forms are the primary method used for entering data into a browser.</li>
+            <li>Forms have a variety of controls that are used for entering different types of information.</li>
+            <li>HTML5 has a large number of new input types that are beginning to be implemented in modern browsers.</li>
+            <li>document.forms will return an HTML collection of all the forms on a page.</li>
+            <li>form.elements will return an HTML collection of all the elements contained within a form.</li>
+            <li>Forms have focus, blur, and change events that fire as a user interacts with the form.</li>
+            <li>Forms also have a submit event that can be used to intercept a form before it’s been submitted.</li>
+            <li>The information entered into a form can be read or updated using the value property of the form controls.</li>
+            <li>The HTML5 form validation API can be used to automatically validate a form, but only at a basic level, so a custom validation script may be required.</li>
+          </ul>
+      </ul>
+    <h3>JavaScript: Novice To Ninja Chapter 12: Object Oriented Programming</h3>
+      <ul>
+        <h4>Object-Oriented Programming</h4>
+        <ul>
+          <li>Encapsulation, polymorphism, and inheritance are the three main concepts</li>
+        </ul>
+        <h4>Encapsulation</h4>
+        <ul>
+          <li>The inner workings are hidden</li>
+        </ul>
+        <h4>Polymorphism</h4>
+        <ul>
+          <li>The same process can be used for different objects</li>
+        </ul>
+        <h4>Inheritance</h4>
+        <ul>
+          <li>Taking the features of one object and adding new features</li>
+        </ul>
+        <h4>Classes</h4>
+        <h4>Constructor Functions</h4>
+        <ul>
+          <li>It is possible to create new objects using the object literal notation</li>
+          <li>The parentheses are not required when instantiating a new object using a constructor function. The parentheses are required, however, if any default arguments need to be provided.</li>
+          <li>instanceof</li>
+        </ul>
+        <h4>ES6 Class Declarations</h4>
+        <ul>
+          <li>By convention, the names of constructor functions or class declarations are capitalized, which is the convention used for classes in class-based programming languages.</li>
+        </ul>
+        <h4>The Constructor Property</h4>
+        <ul>
+          <li>All objects have a constructor property that returns the constructor function that created it:</li>
+        </ul>
+        <h4>Static Methods</h4>
+        <ul>
+          <li>The static keyword can be used in class declarations to create a static method.</li>
+        </ul>
+        <h4>Prototypal Inheritance</h4>
+        <ul>
+          <li>This means that every class has a prototype property that is shared by every instance of the class. So any properties or methods of a class’s prototype can be accessed by every object instantiated by that class.</li>
+        </ul>
+        <h4>The Prototype Property</h4>
+        <ul>
+          <li>All instances of the the Turtle class share all the properties and methods of its prototype. This means they can call any methods of the prototype and access any of its properties. Since the prototype is just an object, we can add new properties by assignment:</li>
+        </ul>
+        <h4>Finding Out the Prototype</h4>
+        <ul>
+          <li>__proto__</li>
+          <li>getPrototypeOf()</li>
+          <li>isPrototypeOf()</li>
+          <li>setPrototypeOf()</li>
+        </ul>
+        <h4>Own Properties and Prototype Properties</h4>
+        <ul>
+          <li>hasOwnPropterty()</li>
+        </ul>
+        <h4>The Prototype Is Live!</h4>
+        <ul>
+          <li>The prototype object is live, so if a new property or method is added to the prototype, any instances of its class will inherit the new properties and methods automatically, even if that instance has already been created. </li>
+          <li>If you change the value of the prototype's weapon property it will be reflected in all instances of the Turtle class</li>
+        </ul>
+        <h4>Overwriting Prototype Properties</h4>
+        <ul>
+          <li>An object instance can overwrite any properties or methods inherited from its prototype by simply assigning a new value to them.</li>
+        </ul>
+        <h4>What should the Prototype Be Used For?</h4>
+        <ul>
+          <li>Add new properties and methods</li>
+          <li>Define any properties that will remain the same for every instance.</li>
+          <li>Create a class declaration that deals with any initialization, shared properties and methods.</li>
+          <li>Any extra methods and properties that need to be augmented to the class declaration after it’s been defined can be added to the prototype. These will be added to all instances, even those that have already been created.</li>
+          <li>Add any properties or methods that are individual to a particular instance can be augmented using assignment to that object (a mixin could be used to add multiple properties at once, as we’ll see later).</li>
+          <li>Be careful when overwriting the prototype completely ― the constructor class needs to be reset.</li>
+        </ul>
+        <h4>Public and Private Methods</h4>
+        <ul>
+          <li>By default, an object’s methods are public in JavaScript. Methods and properties are said to be public because they can be queried directly and changed by assignment.</li>
+        </ul>
+        <h4>Inheritance</h4>
+        <h4>The Prototype Chain</h4>
+        <h4>The Object Constructor</h4>
+        <h4>Enumerable Properties</h4>
+        <ul>
+          <li>If they aren't enumerable, this means they will not show up when a for-in loop is used to loop through an object’s properties and methods.</li>
+          <li>propertyIsEnumerable()</li>
+        </ul>
+        <h4>Inheritance Using extends</h4>
+        <ul>
+          <li>A class can inherit from another class using the extends keyword in a class declaration.</li>
+        </ul>
+        <h4>Polymorphism</h4>
+        <ul>
+          <li>Different objects can have the same method, but implement it in different ways.</li>
+        </ul>
+        <h4>Adding Methods to Built-in Objects</h4>
+        <ul>
+          <li>Monkey-patching is adding more methods to the prototype of JavaScript’s built-in objects — such as Number, String, and Array — to add more functionality.</li>
+        </ul>
+        <h4>Property Attributes and Descriptors</h4>
+        <ul>
+          <li>value ― This is the value of the property and is undefined by default</li>
+          <li>writable ― This boolean value shows whether a property can be changed or not, and is false by default</li>
+          <li>enumerable ― this boolean value shows whether a property will show up when the object is displayed in a for in loop, and is false by default</li>
+          <li>configurable ― this boolean value shows whether you can delete a property or change any of its attributes, and is false by default.</li>
+        </ul>
+        <h4>Getting and Setting Property Descriptors</h4>
+        <ul>
+          <li>object.getOwnPropertyDescriptor()</li>
+          <li>Object.defineProperty()</li>
+        </ul>
+        <h4>Getters and Setters</h4>
+        <h4>Creating Objects from Other Objects</h4>
+        <ul>
+          <li>create method</li>
+          <li><span class="important">The Human object will be the prototype for any objects created using it as an argument and remember that prototypes are live. This means that any changes made to the Human object will be reflected in all the objects created this way.</span></li>
+        </ul>
+        <h4>Object-based Inheritance</h4>
+        <h4>Object Prototype Chain</h4>
+        <ul>
+          <li>Creating objects from objects will create a prototype chain.</li>
+          <li><span class="important">The instanceof operator will not work wen objects have been created this way. It only works when using constructor functions to create objects.</span></li>
+        </ul>
+        <h4>Mixins</h4>
+        <ul>
+          <li>A mixin is a way of adding properties and methods of some objects to another object without using inheritance. It allows more complex objects to be created by ‘mixing’ basic objects together.</li>
+        </ul>
+        <h4>Using Mixins to Add Properties</h4>
+        <ul>
+          <li>One use for the mixin() function is to add a large number of properties to an object all at once. For example, we can instantiate a new Superhuman object, then add all its individual properties in one go, instead of one at a time, as we did earlier, while avoiding having to use the more verbose property descriptor notation:</li>
+        </ul>
+        <h4>Using Mixins to Create a copy() Function</h4>
+        <ul>
+          <li>Another use of the mixin() function is to create a copy() method that can be used to make an exact, deep copy of an object:</li>
+        </ul>
+        <h4>Factory Functions</h4>
+        <ul>
+          <li>A factory function is a function that can be used to return an object.</li>
+        </ul>
+        <h4>Using the Mixin Function to Add Modular Functionality</h4>
+        <ul>
+          <li>The mixin() function lets us encapsulate properties and methods in an object, then add them to other objects without the overhead of an inheritance chain being created.</li>
+          <li>One way to think about the difference between prototypal inheritance and inheritance from mixin objects is to consider whether an object is something or whether it has something. </li>
+        </ul>
+        <h4>Chaining Functions</h4>
+        <ul>
+          <li>You can call for than one function at a time</li>
+        </ul>
+        <h4>Binding this</h4>
+        <h4>Use that = this</h4>
+        <h4>Const that = this;</h4>
+        <h4>Use bind(this)</h4>
+        <h4>Use for-of Instead of forEach()</h4>
+        <h4>Use Arrow Functions</h4>
+        <ul>
+          <li>Arrow functions were introduced in ES6, and one of the advantages of using them is that they don't have their own this context, </li>
+        </ul>
+        <h4>Borrowing Methods from Prototypes</h4>
+        <ul>
+          <li>This is done by making a reference to the function that you want to borrow (that is, without parentheses so that it isn’t invoked).</li>
+        </ul>
+        <h4>Borrowing Array Methods</h4>
+        <h4>Composition Over Inheritance</h4>
+        <h4>Chapter Summary</h4>
+        <ul>
+          <li>Object-oriented programming (OOP) is a way of programming that uses objects that encapsulate their own properties and methods.</li>
+          <li>The main concepts of OOP are encapsulation, polymorphism and inheritance.</li>
+          <li>Constructor functions can be used to create instances of objects.</li>
+          <li>ES6 introduced class declarations that use the class keyword. These can be used in place of constructor functions.</li>
+          <li>Inside a constructor function or class declaration, the keyword this refers to the object returned by the function.</li>
+          <li>All instances of a class or constructor function inherit all the properties and methods of its prototype.</li>
+          <li>The prototype is live, so new properties and methods can be added to existing instances.</li>
+          <li>The prototype chain is used to find an available method. If an object lacks a method, JavaScript will check whether its prototype has the method. If not, it will check that function’s prototype until it finds the method or reaches the Object constructor function.</li>
+          <li>Private properties and methods can be created by defining variables using const and defining a function inside a constructor function. These can be made public using getter and setter functions.</li>
+          <li>Monkey-patching is the process of adding methods to built-in objects by augmenting their prototypes. This should be done with caution as it can cause unexpected behavior in the way built-in objects work.</li>
+          <li>A mixin method can be used to add properties and methods from other objects without creating an inheritance chain.</li>
+          <li>Methods can be chained together and called in sequence if they return a reference to this.</li>
+          <li>Polymorphism allows objects to override shared methods with a more specific implementation.</li>
+          <li>The value of this is not retained inside nested functions, which can cause errors. This can be worked around by using that = this, using the bind(this) method and using arrow functions.</li>
+          <li>Methods can be borrowed from other objects.</li>
+          <li>Composition over inheritance is a design pattern where objects are composed from 'building-block' objects, rather than inheriting all their properties and methods from a parent class.</li>
+        </ul>
+      </ul>
+    	<h3>JavaScript: Novice To Ninja Chapter 15: Modern JavaScript Development</h3>
+      <ul>
+        <li>Modular JavaScript</li>
+        <ul>
+          <li>A module is a self-contained piece of code that provides functions and methods that can then be used in other files and by other modules. </li>
+          <li>Code in a module should have a single purpose.</li>
+          <li>The coupling of code refers to how dependent certain elements or modules of code are on each other. Two pieces of code are said to be tightly coupled if one relies on the other to run. </li>
+          <li>ES6 Modules</li>
+          <ul>
+            <li>All code in modules is always in strict mode without the need for 'use strict' and there is no way to opt out of this.</li>
+            <li>All code in modules is always in strict mode without the need for 'use strict' and there is no way to opt out of this.</li>
+            <li>The value of this in the top level of a module is undefined, rather than the global object.</li>
+            <li>You can't use HTML-style comments in modules (although this isn't very common in any JavaScript program these days).</li>
+            <li>Importing code from other js files</li>
+          </ul>
+          <li>Default Exports</li>
+          <ul>
+            <li>Default exports refer to a single variable, function or class in a module that can be imported without having to be explicitly named.</li>
+            <li><span class="important">Don't use more than one default export! Having more than one default export will result in a syntax error.</span></li>
+          </ul>
+          <li>Node.js Modules</li>
+        </ul>
+      </ul>
+
+</body>
+</html>
