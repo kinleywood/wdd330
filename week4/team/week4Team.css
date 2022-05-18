@@ -1,0 +1,53 @@
+#game-board {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin-top: 1em;
+    height: 12em;
+  }
+  .board {
+    height: 100%;
+    width: 100%;
+  }
+  #a-1, #b-1, #c-1 {
+    border-right: solid black;
+  }
+  #a-3, #b-3, #c-3 {
+    border-left: solid black;
+  }
+  #a-1, #a-2, #a-3 {
+    border-bottom: solid black;
+  }
+  #c-1, #c-2, #c-3 {
+    border-top: solid black;
+  }
+  #players {
+    display: flex;
+  }
+  #player-1 {
+    margin-right: 0.5em;
+    background-color: #f0f;
+    color: #000;
+    border: 5px solid #0ac6ff;
+  }
+  #player-2 {
+    background-color: #0ac6ff;
+    color: #000;
+    border: 5px solid #f0f;
+  }
+  .active {
+    border: 5px solid yellow;
+  }
+  .switch {
+    text-align: center;
+    justify-self: center;
+  }
+  main {
+    display: grid;
+  }
+  button {
+    margin: 1.8em 30% 1em;
+    width: 6.5em;
+    border-radius: 10px;
+    padding: 0.3em;
+  }

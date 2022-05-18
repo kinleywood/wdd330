@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 330 Week 5 Notes</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/medium.css">
+    <link rel="stylesheet" href="../css/large.css">
+</head>
+<body>
+  <div class="button">
+    <a href="week5.html">Back</a>
+  </div>
+  <h1>WDD 330 Portfolio</h1>
+    <h2>Week 5 Notes</h2>
+    <h3>JavaScript: Novice To Ninja Chapter 10 - Testing and Debugging</h3>
+      <ul>
+        <h4>Errors, Exceptions, and Warnings</h4>
+          <ul>
+            <li>Errors are when something goes wrong with the system.</li>
+            <li>System error ― there’s a problem with the system or external devices with which the program is interacting.</li>
+            <li>Programmer error ― the program contains incorrect syntax or faulty logic; it could even be as simple as a typo.</li>
+            <li>User error ― the user has entered data incorrectly, which the program is unable to handle.</li>
+            <li>Exceptions</li>
+              <ul>
+                <li>An exception is an error that produces a return value that can then be used by the program to deal with the error.</li>
+              </ul>
+            <li>Stack Traces</li>
+              <ul>
+                <li>This is a sequence of functions or method calls that lead to the point where the error occurred. </li>
+              </ul>
+            <li>Warnings</li>
+              <ul> 
+                <li>A warning can occur if there’s an error in the code that isn't enough to cause the program to crash.</li>
+                <li>An example of a mistake that could cause a warning is assigning a value to a variable that’s undeclared: pi = 3.141592653589793; (should be const or let pi)</li>
+              </ul>
+          </ul>
+
+        <h4>The Importance of Testing and Debugging</h4>
+          <ul>
+            <li>It fails silently which can make it really hard to find the bugs.</li>
+          </ul>
+
+          <h4>Strict Mode</h4>
+            <ul>
+              <li>This is due to the fact that strict mode considers coding practices that were previously accepted as just being 'poor style' as actual errors.</li>
+              <li>The use of strict mode is reccomended and this is how to use it: "use strict";</li>
+              <li>You can also put it inside of a function</li>
+              <li>Linting Tools</li>
+                <ul>
+                  <li>Linting tools such as JS Lint,JS Hint, and ES Lint can be used to test the quality of JavaScript code, beyond simply using strict mode. </li>
+                </ul>
+              <li>Feature Detection</li>
+                <ul>
+                  <li>if (window.holoDeck) {virtualReality.activate();}</li>
+                  <li>Modernizr is a library that offers an easy way to implement feature detection.</li>
+                </ul>
+            </ul>
+
+          <h4>Debugging in the Browser</h4>
+            <ul>
+              <li>Debugging is the process of finding out where bugs occur in the code and then dealing with them. </li>
+              <li>The Trusty Alert</li>
+                <ul>
+                  <li>The most basic form of debugging is to use the alert() method to show a dialog at certain points in the code.</li>
+                  <li>You can use alert to see exactly what you are testing against something else.</li>
+                </ul>
+              <li>Using the Console</li>
+                <ul>
+                  <li>console.log()</li>
+                  <li>The console.trace() method will log an interactive stack trace in the console. This will show the functions that were called in the lead up to an exception occurring while the code is running.</li>
+                </ul>
+              <li>Debugging Tools</li>
+                <ul>
+                  <li>Most modern browsers also have a debugging tool that allows you to set breakpoints in your code that will pause it at certain points. You can then see the values of all the variables at those points and modify them. </li>
+                  <li>One of the most useful commands is the debugger keyword. This will create a breakpoint in your code that will pause the execution of the code and allow you to see where the program is currently up to. You can also hover over any variables to see what value they hold at that point. </li>
+                  <li>Remember to remove any references to the debugger command before shipping any code, otherwise the program will appear to freeze when people try to use it!</li>
+                </ul>
+            </ul>
+
+          <h4>Error Objects</h4>
+            <ul>
+              <li>An error object can be created by the host environment when an exception occurs, or it can be created in the code using a constructor function</li>
+              <li>EvalError is not used in the current ECMAScript specification and only retained for backwards compatibility. It was used to identify errors when using the global eval() function.</li>
+              <li>RangeError is thrown when a number is outside an allowable range of values.</li>
+              <li>ReferenceError is thrown when a reference is made to an item that doesn’t exist. For example, calling a function that hasn't been defined.</li>
+              <li>SyntaxError is thrown when there’s an error in the code’s syntax.</li>
+              <li>TypeError is thrown when there’s an error in the type of value used; for example, a string is used when a number is expected.</li>
+              <li>URIError is thrown when there’s a problem encoding or decoding the URI.</li>
+              <li>InternalError is a non-standard error that is thrown when an error occurs in the JavaScript engine. A common cause of this too much recursion.</li>
+              <li>The name property returns the name of the error constructor function used as a string, such as 'Error' or 'ReferenceError'.</li>
+              <li>The message property returns a description of the error and should be provided as an argument to the Error constructor function.</li>
+              <li>The stack property will return a stack trace for that error. This is a non-standard property and it’s recommended that it is not safe to use in production sites.</li>
+            </ul>
+
+          <h4>Throwing Exceptions</h4>
+            <ul>
+              <li>You can create your own errors.</li>
+            </ul>
+
+          <h4>Exception Handling</h4>
+            <ul>
+              <li>If we suspect a piece of code will result in an exception, we can wrap it in a try block. This will run the code inside the block as normal, but if an exception occurs it will pass the error object that is thrown onto a catch block. Here’s a simple example using our squareRoot() function from earlier:</li>
+              <li>Tests</li>
+                <ul>
+                  <li>Write tests like: function itSquareRoots4() {return squareRoot(4) === 2;}</li>
+                </ul>
+              <li>Test-driven Development</li>
+                <ul>
+                  <li>Test-driven development (TDD) is the process of writing tests before any actual code. Obviously these tests will initially fail, because there is no code to test. </li>
+                  <li>1.Write tests (that initially fail)<br>
+                    2.Write code to pass the tests<br>
+                    3.Refactor the code<br>
+                    4.Test refactored code <br>
+                    5.Write more tests for new features
+                  </li> 
+                </ul>
+            </ul>
+
+          <h4>Testing Frameworks</h4>
+            <ul>
+              <li>It is possible to write your own tests, as we saw earlier with the itSquareRoots4() test function, but this can be a laborious process. Testing frameworks provide a structure to write meaningful tests and then run them. </li>
+              <li>Jest</li>
+            </ul>
+          <h4>Chapter Summary</h4>
+            <ul>
+              <li>Bugs are unavoidable in code, and it’s best to find them early rather than later.</li>
+              <li>JavaScript can be put into strict mode using the string "use strict". This can be used in a whole file or just a single function.</li>
+              <li>Linting tools can be used to ensure your code follows good practice and conventions.</li>
+              <li>Feature detection can check whether a method is supported before calling it, helping to avoid an exception being thrown.</li>
+              <li>The console and browser’s built-in debugging tool can be used to interactively find and fix bugs in code.</li>
+              <li>Exceptions can be thrown using the throw statement.</li>
+              <li>An error object is created when an exception occurs.</li>
+              <li>Any code placed inside a try block will pass any error objects to a catch block when an exception occurs. Any code inside a finally block will run if an exception does or does not occur.</li>
+              <li>Test-driven development is the practice of writing tests that fail, then writing the code that passes the test, then refactoring the code every time a new feature is implemented.</li>
+              <li>The Jest framework can be used to test your code.      </li>
+            </ul>
+      </ul>
+
+</body>
+</html>
