@@ -6,14 +6,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Challenge One: Todo</title>
   <link rel="stylesheet" href="css/todo.css">
-  <script src="js/mainjs.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+  <script type="module" src="js/mainjs.js" defer></script>
 </head>
 <body>
   <h1>Todos</h1>
 
-  <div id="todoList"></div>
+  <div class="container">
+    <div id="todoList"></div>
 
-  <input type="text" name="newItem" id="newItem"/>
-  <button id="addNewItem">+</button>
+    <div class="footer">
+      <p id="totalTasks">You have 0 tasks</p>
+      <button id="all" class="active">All</button>
+      <button id="incomplete">Incomplete</button>
+      <button id="complete">Complete</button>
+    </div>
+  </div>
+  
+  <div class="newItem">
+    <input type="text" name="newItem" id="newItem"/>
+    <button id="addNewItem">+</button>
+  </div>
 </body>
 </html>

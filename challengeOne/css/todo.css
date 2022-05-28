@@ -1,3 +1,82 @@
 .hide {
   display: none;
 }
+
+.active {
+  color:rgb(255, 0, 200);
+}
+
+body {
+  max-width: fit-content;
+  margin: auto;
+  font-family: 'Shadows Into Light', cursive;
+  background-color:rgb(205, 251, 236);
+}
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  border: solid 1px black;
+}
+#todoList {
+  min-height: 400px;
+  background-color: white;
+}
+
+#todoList .div {
+  border-bottom: solid 1px black;
+  padding: 10px;
+}
+
+label {
+  padding: 10px;
+}
+
+input[type=checkbox]:checked + label{
+  text-decoration: line-through;
+}
+
+.remove {
+  float: right;
+  font-size: 1rem;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 30px 65px 60px;
+  grid-gap: 10px;
+  font-size: .9rem;
+  padding: 0 10px;
+  width: 280px;
+  border-top: solid 1px black;
+  background-color: white;
+}
+
+#newItem {
+  width: 80%;
+  height: 40px;
+  font-size: 1.3rem;
+}
+
+.newItem {
+  padding-bottom: 10px;
+}
+
+#addNewItem {
+  font-size: 2.5rem;
+  background-color: rgb(205, 251, 236);
+}
+
+button {
+  border: none;
+  background-color: white;
+  font-size: .9rem;
+  font-family: 'Shadows Into Light', cursive;
+  margin: 0px;
+}
+
+button:hover {
+  color: rgb(34, 113, 87);
+}
