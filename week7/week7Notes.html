@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 330 Week 7 Notes</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/medium.css">
+    <link rel="stylesheet" href="../css/large.css">
+</head>
+<body>
+  <div class="button">
+    <a href="week7.html">Back</a>
+  </div>
+  <h1>WDD 330 Portfolio</h1>
+    <h2>Week 7 Notes</h2>
+    <h3>JavaScript: Novice To Ninja Chapter 11 - Further Functions</h3>
+      <ul>
+        <h4>Function Properties and Methods</h4>
+        <ul>
+          <li>Call and Apply Methods</li>
+          <li>Custom Properties</li>
+          <ul>
+            <li>You can add a description property to a function that describes what it does.</li>
+          </ul>
+          <li>Memoization</li>
+          <ul>
+            <li>Saving the results of a function</li>
+          </ul>
+        </ul>
+        <h4>Immediately Invoked Function Expressions</h4>
+        <ul>
+          <li>An Immediately Invoked Function Expression – or IIFE – (pronounced 'iffy') is an anonymous function that, as the name suggests, is invoked as soon as it’s defined.</li>
+          <li>Temporary Variables</li>
+          <ul>
+            <li>There is no way to remove a variable from a scope</li>
+          </ul>
+          <li>Initialization Code</li>
+          <li>Safe Use of Strict Mode</li>
+          <ul>
+            <li>The reccomended way to use strict mode is to put it in its own function</li>
+          </ul>
+          <li>Creating Self-contained Code Blocks</li>
+        </ul>
+        <h4>Functions that define and Rewrite Themselves</h4>
+        <ul>
+          <li>This is done by assigning an anonymous function to a variable that has the same name as the function.</li>
+          <li>Loosing Properties</li>
+          <ul>
+            <li>If any properties have previously been set on the function, these will be lost when the function redefines itself. In the previous example, we can set a music property, and see that it no longer exists after the function has been invoked and redefined:</li>
+          </ul>
+          <li>Init-time Branching</li>
+        </ul>
+        <h4>Recursive Functions</h4>
+        <ul>
+          <li>A recursive function is one that invokes itself until a certain condition is met. It’s a useful tool to use when iterative processes are involved. A common example is a function that calculates the factorial of a number:</li>
+        </ul>
+        <h4>Callbacks</h4>
+        <ul>
+          <li>You’ll recall that they’re functions passed to other functions as arguments and then invoked inside the function they are passed to.</li>
+          <li>Event-driven Asynchronous Programming</li>
+          <ul>
+            <li>setTimeout()</li>
+            <li><a href="https://www.youtube.com/watch?v=8aGhZQkoFbQ">What the heck is the event loop anyway? | Philip Roberts | JSConf EU</a></li>
+          </ul>
+          <li>Callback Hell</li>
+          <ul>
+            <li>The increase in the use of asynchronous programming in JavaScript has meant that more and more callbacks are being used. This can result in messy and confusing 'spaghetti code'. </li>
+          </ul>
+          <li>Promises</li>
+          <ul>
+            <li>A promise represents the future result of an asynchronous operation. Promises don't do anything that can't already be achieved using callbacks, but they help simplify the process, and avoid the convoluted code that can result from using multiple callbacks.</li>
+          </ul>
+          <li>The Promise Life Cycle</li>
+          <ul>
+            <li>Resolved ― the asynchronous operation was completed successfully.</li>
+            <li>Rejected ― the asynchronous operation didn’t work as expected, wasn't successfully completed or resulted in an error.</li>
+          </ul>
+          <li>A super Promise</li>
+          <li>Crating a Promise</li>
+          <ul>
+            <li>New Promise ( (resole, reject))</li>
+          </ul>
+          <li>A Dicey Example</li>
+          <li>Dealing with a settled promise</li>
+          <ul>
+            <li>Once a promise has been settled, the then() method can be used to deal with the outcome. This method accepts two arguments. </li>
+          </ul>
+          <li>Chaining Multiple Promises</li>
+          <ul>
+            <li>Promises come into their own when multiple asynchronous tasks are required to be carried out one after the other. If each function that performs an asynchronous operation returns a promise, we can chain the then() methods together to form a sequential piece of code that’s easy to read. Each promise will only begin once the previous promise has been settled.</li>
+          </ul>
+          <li>Async Functions</li>
+          <ul>
+            <li>Async functions were added to the ES2017 specification. These functions are preceded by the async keyword and allow you to write asynchronous code as if it was synchronous.</li>
+          </ul>
+          <li>Generalized Functions</li>
+          <ul>
+            <li>Callbacks can be used to build more generalized functions. Instead of having lots of specific functions, one function can be written that accepts a callback. </li>
+          </ul>
+          <li>Functions that return functions</li>
+        </ul>
+        <h4>Closures</h4>
+        <ul>
+          <li>Functions Scope</li>
+          <ul>
+            <li>This means that whenever a function is defined inside another function, the inner function will have access to any variables that are declared in the outer function's scope.</li>
+          </ul>
+          <li>Returning Functions</li>
+          <ul>
+            <li>A closure is formed when the inner function is returned by the outer function, maintaining access to any variables declared inside the enclosing function.</li>
+          </ul>
+          <li>A practical example</li>
+          <li>A counter example</li>
+          <li>Generators</li>
+          <ul>
+            <li>These are special functions used to produce iterators that maintain the state of a value.</li>
+            <li>To define a generator function, an asterisk symbol (*) is placed after the function declaration, like so:</li>
+          </ul>
+        </ul>
+        <h4>Functional Programming</h4>
+        <ul>
+          <li>Pure Functions</li>
+          <ul>
+            <li>1) The return value of a pure function should only depend on the values provided as arguments. It doesn't rely on values from somewhere else in the program.</li>
+            <li>2) There are no side-effects. A pure function doesn't change any values or data elsewhere in the program. It only makes non-destructive data transformations and returns new values, rather than altering any of the underlying data.</li>
+            <li>3) Referential transparency. Given the same arguments, a pure function will always return the same result.</li>
+          </ul>
+          <li>Higher-order Functions</li>
+          <ul>
+            <li>Higher-order functions are functions that accept another function as an argument, or return another function as a result, or both.</li>
+          </ul>
+          <li>Currying</li>
+          <ul>
+            <li>Currying allows you to turn a single function into a series of functions instead.</li>
+          </ul>
+          <li>A general curry function</li>
+          <ul>
+            <li>It’s possible to use a curry() function to take any function and allow it to be partially applied.</li>
+          </ul>
+        </ul>
+        <h4>Getting Functional</h4>
+        <h4>Chapter Summary</h4>
+        <ul>
+          <li>Functions have built-in properties such as length, but can have custom properties added.</li>
+          <li>All functions have call() and apply() methods that can invoke a function with the value of this bound to an object that is provided as an argument.</li>
+          <li>Immediately Invoked Function Expressions or IIFEs are functions that are enclosed in parentheses and immediately followed by double parentheses so they’re invoked. They are useful for namespacing variables and setting default values.</li>
+          <li>Functions are able to dynamically redefine themselves in the body of the function, depending on certain conditions.</li>
+          <li>A recursive function will keep invoking itself until a certain condition is met.</li>
+          <li>A callback is a function that’s provided as an argument to another function.</li>
+          <li>Callbacks are frequently used in asynchronous programming as part of the event loop. This means that a program can continue to run in a single thread while waiting for another task to be completed.</li>
+          <li>Promises can be used instead of callbacks to deal with multiple asynchronous actions in sequence. They also provide a nicer mechanism for handling errors.</li>
+          <li>Functions that return other functions are known as higher-order functions.</li>
+          <li>A closure is the process of keeping a reference to a variable available outside the scope of the function it was originally defined in.</li>
+          <li>A generator is created by placing an asterisk character (*) after the function keyword.</li>
+          <li>A generator function will return an iterator object that provides a next() method, which returns the next value in a sequence that is defined in the generator function.</li>
+          <li>Functional programming involves breaking processes down into steps that can be applied as a series of functions.</li>
+          <li>Pure functions are functions that don't rely on the state of the code they are called from, have no side-effects, and always give the same result when given the same arguments (referential transparency).</li>
+          <li>Currying or partial application is the process of applying one argument at a time to a function. A new function is returned until all the arguments have been used.</li>
+        </ul>
+      </ul>
+    <h3>JavaScript: Novice To Ninja Chapter 13: Ajax</h3>
+      <ul>
+        <h4>Clients and Servers</h4>
+          <li>The web of computers known as the internet can be separated into two parts: clients and servers. A client, such as a web browser, will request a resource (usually a web page) from a server, which processes the request and sends back a response to the client.</li>
+        <h4>A brief History of Ajax</h4>
+          <li>Asynchronous</li>
+          <ul>
+            <li>When a request for data is sent, the program doesn’t have to stop and wait for the response. It can carry on running, waiting for an event to fire when a response is received. By using callbacks to manage this, programs are able to run in an efficient way, avoiding lag as data is transferred back and forth.</li>
+          </ul>
+          <li>Javascript</li>
+          <ul>
+            <li>JavaScript was always considered a 'front-end' language, not used to communicate with the server. Ajax enabled JavaScript to send requests and receive responses from a server, allowing content to be updated in real time.</li>
+          </ul>
+          <li>XML</li>
+          <ul>
+            <li>When the term Ajax was originally coined, XML documents were often used to return data. Many different types of data can be sent, but by far the most commonly used in Ajax nowadays is JSON, which is more lightweight and easier to parse than XML. (Although it has never really taken off, the term Ajaj is sometimes used to describe the technique.) JSON also has the advantage of being natively supported in JavaScript, so you can deal with JavaScript objects rather than having to parse XML files using DOM methods.</li>
+          </ul>
+        <h4>The Fetch API</h4>
+          <li>Basic Usage</li>
+          <ul>
+            <li>The Fetch API provides a global fetch() method that only has one mandatory argument, which is the URL of the resource you wish to fetch. </li>
+          </ul>
+          <li>Response Interface</li>
+          <ul>
+            <li>For example, each response object has an ok property that checks to see if the response is successful. using the status property. This will usually be 200 if the response was successful, 201 if a resource was created, or 204 when the request is successful but no content is returned. The ok property will return true if the status property is between 200 and 299.</li>
+            <li>headers – A Headers object (see later section) containing any headers associated with the response</li>
+            <li>url – A string containing the URL of response</li>
+            <li>redirected – A boolean value that specifies if the response is the result of a redirect</li>
+            <li>type – A string value of 'basic', 'cors', 'error' or 'opaque'. A value of 'basic' is used for a response from the same domain. A value of 'cors' means the data was received from a valid cross-origin request from a different domain. A value of 'opaque' is used for a response received from 'no-cors' request from another domain, which means access to the data will be severely restricted. A value of 'error' is used when a network error occurs.</li>
+          </ul>
+          <li>Redirects</li>
+          <ul>
+            <li>The redirect() method can be used to redirect to another URL. It creates a new promise that resolves to the response from the redirected URL.</li>
+            <li>At the present time, there is no support for the redirect() method in any browser.</li>
+          </ul>
+          <li>Text Responses</li>
+          <ul>
+            <li>The text() method takes a stream of text from the response, reads it to completion and then returns a promise that resolves to a USVSting object that can be treated as a string in JavaScript.</li>
+          </ul>
+          <li>File Responses</li>
+          <ul>
+            <li>The blob() method is used to read a file of raw data, such as an image or a spreadsheet. Once it has read the whole file, it returns a promise that resolves with a blob object.</li>
+          </ul>
+          <li>JSON Responses</li>
+          <ul>
+            <li>The json() method is used to deal with these by transforming a stream of JSON data into a promise that resolves to a JavaScript object.</li>
+          </ul>
+          <li>Creating Response Objects</li>
+          <ul>
+            <li>You can create your own response objects</li>
+          </ul>
+          <li>Request interface</li>
+          <ul>
+            <li>We can get more fine-grained control over the request being made by providing a Request object as an argument. This allows a number of options to be set about the request.</li>
+            <li>url – The URL of the requested resource (the only property that is required).</li>
+            <li>method – a string that specifies which HTTP method should be used for the request. By default, this is 'GET'.</li>
+            <li>headers – This is a Headers object (see later section) that provides details of the request's headers.</li>
+            <li>mode – Allows you to specify if CORS is used or not. CORS is enabled by default.</li>
+            <li>cache – Allows you to specify how the request will use the browser's cache. For example, you can force it to request a resource and update the cache with the result, or you can force it to only look in the cache for the resource.</li>
+            <li>credentials – Lets you specify if cookies should be allowed with the request.</li>
+            <li>redirect – Specifies what to do if the response returns a redirect. There’s a choice of three values: 'follow' (the redirect is followed), 'error' (an error is thrown) or 'manual' (the user has to click on a link to follow the redirect).</li>
+          </ul>
+          <li>Headers Interface</li>
+          <ul>
+            <li>HTTP headers are used to pass on any additional information about a request or response. Typical information contained in headers includes the file-type of the resource, cookie information, authentication information and when the resource was last modified.</li>
+            <li>has() – Can be used to check if the headers object contains the header provided as an argument.</li>
+            <li>get() - Returns the value of the header provided as an argument</li>
+            <li>set() – Can be used to set a value of an already existing header, or create a new header with the value provided as an argument if it does not already exist.</li>
+            <li>append() – Adds a new header to the headers object.</li>
+            <li>delete() – Removes the header provided as an argument.</li>
+            <li>keys(), values() and entries() – Iterators that can be used to iterate over the headers key, values or entries (key and value pairs).</li>
+          </ul>
+          <li>Putting it all together</li>
+        <h4>Receiving information</h4>
+          <li>Not all these "Facts" are safe for work</li>
+        <h4>Sending Information</h4>
+        <h4>FormData</h4>
+          <li>The Fetch API includes the FormData interface, which makes it much easier to submit information in forms using Ajax.</li>
+        <h4>A Living Standard</h4>
+        <h4>Chapter Summary</h4>
+          <li>Ajax is a technique for sending and receiving data asynchronously in the background.</li>
+          <li>The data can be sent in many forms, but it is usually in JSON.</li>
+          <li>Ajax can be used for making partial page updates without having to do a full page reload.</li>
+          <li>Ajax can be used for communicating with external APIs.</li>
+          <li>Ajax requests can be made using the Fetch API.</li>
+          <li>The Response interface allows you to control the response received from a request or to create your own response objects.</li>
+          <li>The Request interface allows you to create a request object that contains information about the request being made, such as the URL and headers.</li>
+          <li>The Headers interface allows you to create HTTP headers that can be added to a request or response object.</li>
+          <li>Requests can retrieve data using a GET request, or send data using a POST request.</li>
+          <li>The FormData interface makes it easier to send data from forms.</li>
+    
+      </ul>
+
+</body>
+</html>
