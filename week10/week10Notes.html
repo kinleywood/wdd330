@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 330 Week 9 Notes</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/medium.css">
+    <link rel="stylesheet" href="../css/large.css">
+</head>
+<body>
+  <div class="button">
+    <a href="week9.html">Back</a>
+  </div>
+  <h1>WDD 330 Portfolio</h1>
+    <h2>Week 9 Notes</h2>
+    <h3>MDN: Validating Forms</h3>
+      <ul>
+        <h4>What is form validation?</h4>
+          <ul>
+            <li>Form validation is when a form must be filled out and meet certain requirements before it can be submited</li>
+            <li>Warning: Never trust data passed to your server from the client. Even if your form is validating correctly and preventing malformed input on the client-side, a malicious user can still alter the network request.</li>
+          </ul>
+        <h4>Different types of client-sid validation</h4>
+          <ul>
+            <li>Built-in form validation uses HTML5 form validation features. Does not require much JS. Has better performance than JS but is not as customizable.</li>
+            <li>JavaScript validation uses JavaScript. It is completely customizable but you must create it all.</li>
+          </ul>
+        <h4>Using built-in form validation</h4>
+          <ul>
+            <li>required: Specifies whether a form field needs to be filled in before the form can be submitted.</li>
+            <li>minlength and maxlength: Specifies the minimum and maximum length of textual data (strings)</li>
+            <li>min and max: Specifies the minimum and maximum values of numerical input types</li>
+            <li>type: Specifies whether the data needs to be a number, an email address, or some other specific preset type.</li>
+            <li>pattern: Specifies a regular expression that defines a pattern the entered data needs to follow.</li>
+          </ul>    
+      </ul>
+
+    <h3>MDN: Using the Fetch API</h3>
+      <ul>
+        <h4>Supplying request options</h4>
+          <ul>
+            <li>mode: "no-cors" allows for: accept, accept-language, content-language, content-type</li>
+          </ul>
+        <h4>Sending a request with credentials included</h4>
+          <ul>
+            <li>o cause browsers to send a request with credentials included on both same-origin and cross-origin calls, add credentials: 'include' to the init object you pass to the fetch() method.</li>
+            <li>If you only want to send credentials if the request URL is on the same origin as the calling script, add credentials: 'same-origin'.</li>
+          </ul>
+        <h4>Uploading JSON data</h4>
+          <ul>
+            <li>Use fetch() to POST JSON-encoded data.</li>
+          </ul>
+        <h4>Uploading a file</h4>
+          <ul>
+            <li>Files can be uploaded using an HTML <input type="file" /> input element, FormData() and fetch().</li>
+          </ul>
+        <h4>Uploading multiple files</h4>
+          <ul>
+            <li>Files can be uploaded using an HTML <input type="file" multiple /> input element, FormData() and fetch().</li>
+          </ul>
+        <h4>Processing a text file line by line</h4>
+          <ul>
+            <li>You need to create a line iterator to do this.</li>
+          </ul>
+      </ul>
+
+</body>
+</html>
