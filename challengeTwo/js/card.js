@@ -1,0 +1,1 @@
+document.createElement("alert", "it worked");

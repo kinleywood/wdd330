@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Star Wars Groups</title>
+  <meta name="description" content="Using the Star Wars API, or SWAPI, you can group your favorite, or least favorite, Star wars characters together. You can make as many groups as you wish.">
+  <link rel="stylesheet" href="css/todo.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+  <script type="module" src="js/mainjs.js" defer></script>
+</head>
+<header>
+  <picture>
+    <img src="" alt="Star Wars Groups Logo">
+  </picture>
+  <h1>Todos</h1>
+  <div>
+    <p>Sources:</p>
+    <p>https://swapi.dev/</p>
+  </div>
+</header>
+<body>
+
+  <!-- <div class="container"> -->
+    <div id="groups"></div>
+
+    <div class="footer">
+      <p id="totalTasks">You have 0 tasks</p>
+      <button id="all" class="active">All</button>
+      <button id="incomplete">Incomplete</button>
+      <button id="complete">Complete</button>
+    </div>
+  <!-- </div> -->
+  
+  <div class="newItem">
+    <input type="text" name="newItem" id="newItem"/>
+    <button id="addNewItem">+</button>
+  </div>
+</body>
+</html>
