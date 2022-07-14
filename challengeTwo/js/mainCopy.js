@@ -1,11 +1,11 @@
 import writeTimeStamp from "./todos.js";
 
-let url = "https://swapi.dev/api/people/.json";
-// let url = "https://swapi.dev/api/people/.json?page=9";
+const url = "https://swapi.dev/api/";
 const newGroupBtn = document.getElementById("newGroup");
 const groupsSect = document.querySelector(".groups");
 let nextUrl = "";
 let previousUrl = "";
+let nextBtn = document.getElementById("next");
 const todoList = document.getElementById("todoList");
 const tasksLeft = document.getElementById("totalTasks");
 const allBtn = document.getElementById("all");
@@ -14,29 +14,31 @@ const completeBtn = document.getElementById("complete");
 const tasksArray = [];
 const localStorageObject = [];
 let characters = [];
-const pages = ["","?page=2","?page=3","?page=4","?page=5","?page=6","?page=7",,"?page=8","?page=9"]
-
 
 const list = {
   fetchUrl(url) {
-    pages.map(async page => {
-      fetch(`${url}${page}`)
-        .then(response => response.json())
-        .then(jsObject => {
-          console.log(jsObject);
-          // document.querySelectorAll("div").remove;
-          for (let i=0; i<10; i++) {let name = (jsObject.results[i].name); characters.push(name); console.log(name);}
-          console.log(nextUrl);
-          nextUrl = JSON.stringify(jsObject.next);
-          console.log(nextUrl);
-        })
+    return fetch(`${url}.json`)
+      .then(function(response) {
+        if (!response.ok) {
+          throw Error(response.statusText);
+        } else {
+          console.log(response.json())
+          return response.json();
+        }
       })
-    },
-
+      .catch(function (error) {
+        console.log(error);
+      });
+      // .then(jsObject => {
+      //   console.log(jsObject);
+      //   // document.querySelectorAll("div").remove;
+      //   for (let i=0; i<10; i++) {let name = (jsObject.results[i].name); characters.push(name); console.log(name);}
+      //   nextUrl = JSON.stringify(jsObject.next);
+      //   previousUrl = JSON.stringify(jsObject.previous);})
+  },
   addNewGroup() {
     list.createCard();
   },
-
   createCard() {
     // create elements
     const card = document.createElement("div");
@@ -47,11 +49,11 @@ const list = {
     card.appendChild(h3);
     card.appendChild(list.createForm());
     groupsSect.appendChild(card);
+    nextBtn.addEventListener("click", list.fetchUrl(nextUrl));
   },
-
   createForm() {
     const form = document.createElement("form");
-      // form.setAttribute("action", "card.js")
+      form.setAttribute("action", "card.js")
     const titleLabel = document.createElement("label");
       titleLabel.setAttribute("for", "groupName");
       titleLabel.textContent = "Group Name: ";
@@ -62,11 +64,9 @@ const list = {
       title.setAttribute("placeholder", "New Group");
     const h4 = document.createElement("h4");
       h4.textContent = "Choose who you want on this team:";
-    const textAreaLabel = document.createElement("label");
-      textAreaLabel.setAttribute("for", "groupDesc");
-    const textArea = document.createElement("textarea");
-      textArea.setAttribute("class", "groupDesc");
-      textArea.setAttribute("name", "groupDesc");
+    const nextBtn = document.createElement("button");
+      nextBtn.setAttribute("id", "next");
+      nextBtn.textContent = "Show More";
     const submit = document.createElement("input");
       submit.setAttribute("type", "submit");
       submit.setAttribute("value", "Submit");
@@ -75,7 +75,7 @@ const list = {
     form.appendChild(title);
     form.appendChild(h4);
     for(let i = 0; i < characters.length; i++) {let person = list.createPeopleChecklist(i); let personLabel = list.createPeopleLabel(i); form.appendChild(person); form.appendChild(personLabel);};
-    form.appendChild(textArea);
+    form.appendChild(nextBtn);
     form.appendChild(submit);
 
     return form;
@@ -265,14 +265,9 @@ createPeopleLabel(i) {
 //     }
 //   }
 }
-list.fetchUrl(`${url}`); 
+list.fetchUrl(`${url}people/`); 
 // list.fetchUrl(nextUrl);
 
-function test() {
-  console.log(
-    "it works"
-  )
-}
 // function writeToLS() { 
 //   window.localStorage.clear();
 //   window.localStorage.setItem("todo", JSON.stringify(localStorageObject));

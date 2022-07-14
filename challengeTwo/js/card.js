@@ -1,1 +1,2 @@
-document.createElement("alert", "it worked");
+const alert = document.createElement("alert", "it worked");
+document.append(alert);
