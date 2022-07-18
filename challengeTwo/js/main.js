@@ -2,10 +2,10 @@ import writeTimeStamp from "./todos.js";
 
 let url = "https://swapi.dev/api/people/.json";
 // let url = "https://swapi.dev/api/people/.json?page=9";
-const newTeamBtn = document.getElementById("newTeam");
+const startBtn = document.getElementById("newTeam");
 const teamsSect = document.querySelector(".teams");
 let nextUrl = "";
-let formId = 1;
+let teamForm = document.querySelector(".teamForm");
 const todoList = document.getElementById("todoList");
 const tasksLeft = document.getElementById("totalTasks");
 const allBtn = document.getElementById("all");
@@ -32,28 +32,29 @@ const list = {
       })
     },
 
-  addNewTeam() {
+  start() {
     if (characters.length < 82) {
       alert("We are still loading Star Wars characters. Please try again.");
     } else {
-      list.createCard();
+      list.appendForm();
       const myForm = document.getElementById(`myForm`);
       const subBtn = document.getElementById("submitBtn");
-      subBtn.addEventListener("click", () => {list.createNode();});
+      subBtn.addEventListener("click", () => {if (document.querySelector("#teamName").value != "") {const array = list.createNode(); this.createCard(array);} else {return}});
+      startBtn.remove();
     }
 
   },
 
-  createCard() {
+  appendForm() {
     // create elements
     const card = document.createElement("div");
-    const h3 = document.createElement("h3");
+    // const h3 = document.createElement("h3");
     // fill elements
-    h3.textContent = "New Team";
+    // h3.textContent = "New Team";
     // append to document
-    card.appendChild(h3);
+    // card.appendChild(h3);
     card.appendChild(list.createForm());
-    teamsSect.appendChild(card);
+    teamForm.appendChild(card);
   },
 
   createForm() {
@@ -84,7 +85,7 @@ const list = {
       textArea.setAttribute("name", "teamDesc");
     const submit = document.createElement("input");
       submit.setAttribute("type", "submit");
-      submit.setAttribute("value", "Submit");
+      submit.setAttribute("value", "Create New Team");
       submit.setAttribute("id", "submitBtn");
 
     form.appendChild(fieldset);
@@ -98,6 +99,7 @@ const list = {
 
     return form;
   },
+
   createPeopleChecklist(i) {
     const person = document.createElement("input")
       person.setAttribute("type", "checkbox");
@@ -106,21 +108,25 @@ const list = {
     return person;
     
   },
-createPeopleLabel(i) {
-  const personLabel = document.createElement("label");
-    personLabel.setAttribute("for", characters[i]);
-    personLabel.textContent = characters[i];
-  return personLabel;
-},
-createNode() {
-  const teamName = document.querySelector("#teamName");
-  const teamDesc = document.querySelector("#teamDesc");
-  const array = Array.from(document.querySelectorAll("#myForm input[type='checkbox']")).reduce((acc, input) => ({ ...acc, [input.id]: input.checked}), {});
-  array[teamName.id] = teamName.value;
-  array[teamDesc.id] = teamDesc.value;
-  console.log(array);
-  return array;
-},
+  createPeopleLabel(i) {
+    const personLabel = document.createElement("label");
+      personLabel.setAttribute("for", characters[i]);
+      personLabel.textContent = characters[i];
+    return personLabel;
+  },
+  createNode() {
+    const teamName = document.querySelector("#teamName");
+    const teamDesc = document.querySelector("#teamDesc");
+    const array = Array.from(document.querySelectorAll("#myForm input[type='checkbox']")).reduce((acc, input) => ({ ...acc, [input.id]: input.checked}), {});
+    array[teamName.id] = teamName.value;
+    array[teamDesc.id] = teamDesc.value;
+    console.log(array);
+    return array;
+  },
+
+  createCard(array) {
+    console.log(array.teamName);
+  },
 //   // get input from document. If input is blank do nothing; else call the createItem function
 //   // set the input value back to nothing. Focus the cursor on the text box.
 //   addNewItems() {
@@ -307,7 +313,7 @@ function test() {
 
 
 
-newTeamBtn.addEventListener("click", list.addNewTeam);
+startBtn.addEventListener("click", () => {list.start()});
 
 // addNewItem.addEventListener("click", list.addNewItems);
 // allBtn.addEventListener("click", list.filterAll);
