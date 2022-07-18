@@ -2,10 +2,10 @@ import writeTimeStamp from "./todos.js";
 
 let url = "https://swapi.dev/api/people/.json";
 // let url = "https://swapi.dev/api/people/.json?page=9";
-const newGroupBtn = document.getElementById("newGroup");
-const groupsSect = document.querySelector(".groups");
+const newTeamBtn = document.getElementById("newTeam");
+const teamsSect = document.querySelector(".teams");
 let nextUrl = "";
-let previousUrl = "";
+let formId = 1;
 const todoList = document.getElementById("todoList");
 const tasksLeft = document.getElementById("totalTasks");
 const allBtn = document.getElementById("all");
@@ -23,18 +23,25 @@ const list = {
       fetch(`${url}${page}`)
         .then(response => response.json())
         .then(jsObject => {
-          console.log(jsObject);
+          // console.log(jsObject);
           // document.querySelectorAll("div").remove;
-          for (let i=0; i<10; i++) {let name = (jsObject.results[i].name); characters.push(name); console.log(name);}
-          console.log(nextUrl);
+          for (let i=0; i<10; i++) {let name = (jsObject.results[i].name); characters.push(name);}
           nextUrl = JSON.stringify(jsObject.next);
-          console.log(nextUrl);
+          characters.sort();
         })
       })
     },
 
-  addNewGroup() {
-    list.createCard();
+  addNewTeam() {
+    if (characters.length < 82) {
+      alert("We are still loading Star Wars characters. Please try again.");
+    } else {
+      list.createCard();
+      const myForm = document.getElementById(`myForm`);
+      const subBtn = document.getElementById("submitBtn");
+      subBtn.addEventListener("click", () => {list.createNode();});
+    }
+
   },
 
   createCard() {
@@ -42,41 +49,52 @@ const list = {
     const card = document.createElement("div");
     const h3 = document.createElement("h3");
     // fill elements
-    h3.textContent = "New Group";
+    h3.textContent = "New Team";
     // append to document
     card.appendChild(h3);
     card.appendChild(list.createForm());
-    groupsSect.appendChild(card);
+    teamsSect.appendChild(card);
   },
 
   createForm() {
     const form = document.createElement("form");
-      // form.setAttribute("action", "card.js")
+      form.setAttribute("action", `card.html`);
+      form.setAttribute("method", `POST`);
+      form.setAttribute("target", `_blank`);
+      form.setAttribute("id", `myForm`);
+      form.setAttribute("class", "form");
+    const fieldset = document.createElement("fieldset");
+    const legend = document.createElement("legend");
+      legend.textContent = "Create Team";
     const titleLabel = document.createElement("label");
-      titleLabel.setAttribute("for", "groupName");
-      titleLabel.textContent = "Group Name: ";
+      titleLabel.setAttribute("for", "teamName");
+      titleLabel.textContent = "Team Name: ";
     const title = document.createElement("input");
       title.setAttribute("type", "text");
-      title.setAttribute("class", "groupName");
-      title.setAttribute("name", "groupName");
-      title.setAttribute("placeholder", "New Group");
+      title.setAttribute("id", "teamName");
+      title.setAttribute("name", "teamName");
+      title.setAttribute("placeholder", "New Team");
+      title.setAttribute("required", "true");
     const h4 = document.createElement("h4");
       h4.textContent = "Choose who you want on this team:";
     const textAreaLabel = document.createElement("label");
-      textAreaLabel.setAttribute("for", "groupDesc");
+      textAreaLabel.setAttribute("for", "teamDesc");
     const textArea = document.createElement("textarea");
-      textArea.setAttribute("class", "groupDesc");
-      textArea.setAttribute("name", "groupDesc");
+      textArea.setAttribute("id", "teamDesc");
+      textArea.setAttribute("name", "teamDesc");
     const submit = document.createElement("input");
       submit.setAttribute("type", "submit");
       submit.setAttribute("value", "Submit");
+      submit.setAttribute("id", "submitBtn");
 
-    form.appendChild(titleLabel);
-    form.appendChild(title);
-    form.appendChild(h4);
-    for(let i = 0; i < characters.length; i++) {let person = list.createPeopleChecklist(i); let personLabel = list.createPeopleLabel(i); form.appendChild(person); form.appendChild(personLabel);};
-    form.appendChild(textArea);
-    form.appendChild(submit);
+    form.appendChild(fieldset);
+    fieldset.appendChild(legend);
+    fieldset.appendChild(titleLabel);
+    fieldset.appendChild(title);
+    fieldset.appendChild(h4);
+    for(let i = 0; i < characters.length; i++) {let person = list.createPeopleChecklist(i); let personLabel = list.createPeopleLabel(i); fieldset.appendChild(person); fieldset.appendChild(personLabel);};
+    fieldset.appendChild(textArea);
+    fieldset.appendChild(submit);
 
     return form;
   },
@@ -93,6 +111,15 @@ createPeopleLabel(i) {
     personLabel.setAttribute("for", characters[i]);
     personLabel.textContent = characters[i];
   return personLabel;
+},
+createNode() {
+  const teamName = document.querySelector("#teamName");
+  const teamDesc = document.querySelector("#teamDesc");
+  const array = Array.from(document.querySelectorAll("#myForm input[type='checkbox']")).reduce((acc, input) => ({ ...acc, [input.id]: input.checked}), {});
+  array[teamName.id] = teamName.value;
+  array[teamDesc.id] = teamDesc.value;
+  console.log(array);
+  return array;
 },
 //   // get input from document. If input is blank do nothing; else call the createItem function
 //   // set the input value back to nothing. Focus the cursor on the text box.
@@ -280,7 +307,7 @@ function test() {
 
 
 
-newGroupBtn.addEventListener("click", list.addNewGroup);
+newTeamBtn.addEventListener("click", list.addNewTeam);
 
 // addNewItem.addEventListener("click", list.addNewItems);
 // allBtn.addEventListener("click", list.filterAll);
