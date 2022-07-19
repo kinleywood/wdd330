@@ -6,15 +6,11 @@ const startBtn = document.getElementById("newTeam");
 const teamsSect = document.querySelector(".teams");
 let nextUrl = "";
 let teamForm = document.querySelector(".teamForm");
-const todoList = document.getElementById("todoList");
-const tasksLeft = document.getElementById("totalTasks");
-const allBtn = document.getElementById("all");
-const incompleteBtn = document.getElementById("incomplete");
-const completeBtn = document.getElementById("complete");
 const tasksArray = [];
 const localStorageObject = [];
-let characters = [];
+const characters = [];
 const pages = ["","?page=2","?page=3","?page=4","?page=5","?page=6","?page=7",,"?page=8","?page=9"]
+let cardId = 1;
 
 
 const list = {
@@ -33,7 +29,8 @@ const list = {
     },
 
   start() {
-    if (characters.length < 82) {
+    // if (characters.length < 82) {
+    if (characters.length == 0) {
       alert("We are still loading Star Wars characters. Please try again.");
     } else {
       list.appendForm();
@@ -120,12 +117,38 @@ const list = {
     const array = Array.from(document.querySelectorAll("#myForm input[type='checkbox']")).reduce((acc, input) => ({ ...acc, [input.id]: input.checked}), {});
     array[teamName.id] = teamName.value;
     array[teamDesc.id] = teamDesc.value;
-    console.log(array);
+    // console.log(array);
     return array;
   },
 
   createCard(array) {
-    console.log(array.teamName);
+    const h3 = document.createElement("h3");
+      h3.textContent = array.teamName;
+    const div = document.createElement("div");
+      div.setAttribute("id", `card${cardId}`);
+    cardId += 1;
+
+    
+    const array2 = Object.entries(array);
+    const result = array2.filter(([key, value]) => value === true);
+    
+    function createPeople(person) {
+      const p = document.createElement("p");
+      p.textContent = person;
+      
+      return p;
+    };
+    
+    div.appendChild(h3);
+    if (array.teamDesc != "") {
+      const p = document.createElement("p");
+      p.textContent = array.teamDesc;
+      p.setAttribute("class", "description");
+      div.appendChild(p);
+    } 
+    for(let i = 0; i < result.length; i++) {let person = result[i][0]; const p = createPeople(person); div.appendChild(p);};
+    teamsSect.appendChild(div);
+    
   },
 //   // get input from document. If input is blank do nothing; else call the createItem function
 //   // set the input value back to nothing. Focus the cursor on the text box.
@@ -192,23 +215,23 @@ const list = {
 //     this.filter();
 //   },
 
-//   // Removes Item from list
-//   removeItem(div, item) {
-//     const itemDiv = document.querySelector(`.${div}`);
-//     const index = tasksArray.findIndex(object => {
-//       return object == div;
-//     });
-//     console.log(index);
-//     const lsindex = localStorageObject.findIndex(object => {
-//       return object.content === item;
-//     });
-//     itemDiv.remove();                     // removes entire div
-//     tasksArray.splice(index, 1); // removes the class name from the tasksArray array
-//     localStorageObject.splice(lsindex, 1);
-//     console.log(tasksArray);
-//     writeToLS();
-//     this.filter();
-//   },
+  // Removes Item from list
+  removeItem(div, item) {
+    const itemDiv = document.querySelector(`.${div}`);
+    const index = tasksArray.findIndex(object => {
+      return object == div;
+    });
+    console.log(index);
+    const lsindex = localStorageObject.findIndex(object => {
+      return object.content === item;
+    });
+    itemDiv.remove();                     // removes entire div
+    tasksArray.splice(index, 1); // removes the class name from the tasksArray array
+    localStorageObject.splice(lsindex, 1);
+    console.log(tasksArray);
+    writeToLS();
+    this.filter();
+  },
 
 //   filter() {
 //     if (completeBtn.classList.contains("active")){this.filterComplete();}

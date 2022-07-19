@@ -14,6 +14,7 @@ const completeBtn = document.getElementById("complete");
 const tasksArray = [];
 const localStorageObject = [];
 let characters = [];
+let pictures = [];
 const pages = ["","?page=2","?page=3","?page=4","?page=5","?page=6","?page=7",,"?page=8","?page=9"]
 
 
@@ -23,7 +24,7 @@ const list = {
       fetch(`${url}${page}`)
         .then(response => response.json())
         .then(jsObject => {
-          // console.log(jsObject);
+          console.log(jsObject);
           // document.querySelectorAll("div").remove;
           for (let i=0; i<10; i++) {let name = (jsObject.results[i].name); characters.push(name);}
           nextUrl = JSON.stringify(jsObject.next);
@@ -33,7 +34,8 @@ const list = {
     },
 
   start() {
-    if (characters.length < 82) {
+    // if (characters.length < 82) {
+    if (characters.length == 0) {
       alert("We are still loading Star Wars characters. Please try again.");
     } else {
       list.appendForm();
@@ -125,7 +127,34 @@ const list = {
   },
 
   createCard(array) {
-    console.log(array.teamName);
+    const h3 = document.createElement("h3");
+      h3.textContent = array.teamName;
+    const div = document.createElement("div");
+
+    
+    const array2 = Object.entries(array);
+    const result = array2.filter(([key, value]) => value === true);
+    
+    function createPeople(person) {
+      const div = document.createElement("div");
+      div.setAttribute("class", "people");
+      const p = document.createElement("p");
+      p.textContent = person;
+      
+      div.appendChild(p);
+      return div;
+    };
+    
+    teamsSect.appendChild(h3);
+    if (array.teamDesc != "") {
+      const p = document.createElement("p");
+      p.textContent = array.teamDesc;
+      p.setAttribute("class", "description");
+      teamsSect.appendChild(p);
+    } 
+    for(let i = 0; i < result.length; i++) {let person = result[i][0]; const p = createPeople(person); div.appendChild(p);};
+    teamsSect.appendChild(div);
+    
   },
 //   // get input from document. If input is blank do nothing; else call the createItem function
 //   // set the input value back to nothing. Focus the cursor on the text box.
