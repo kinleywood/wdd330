@@ -1,0 +1,153 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Exo 2', sans-serif;
+  background-color: black;
+}
+
+header{
+  background-color: #fce300;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+h2 {
+  color: #fce300;
+  text-align: center;
+  font-size: 3rem;
+}
+
+h3 {
+  text-align: center;
+  padding:10px;
+  font-size: 2.3rem;
+}
+
+h4 {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.4rem;
+  padding-top: 40px;
+  padding-bottom: 10px;
+}
+
+p {
+  padding: 10px;
+  margin: 10px
+}
+
+img.logo {
+  width: 50px;
+  padding: 10px;
+  height: auto;
+  color: white;
+  font-size: 10px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 10px;
+  padding: 10px 0;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  line-height: 1.3rem;
+}
+
+section.teams {
+  background-color: rgb(44, 43, 43);
+  padding-bottom: 40px;
+}  
+
+.teamForm {
+  color:white;
+  padding: 10px;
+  margin: 20px;
+  font-size: 1.2rem;
+}
+fieldset{
+  border: 2px #fce300 solid;
+  display: flex;
+  flex-direction: column;
+}
+#teamName {
+  height: 40px;
+}
+legend {
+  color: #fce300;
+  padding: 5px;
+}
+[type="checkbox"] {
+  display: none;
+}
+.check {
+  color:#fce300;
+  height: 40px;
+}
+[type="checkbox"]:checked ~ label{
+  color: white;
+  text-decoration: underline;
+}
+[type="text"] {
+  margin-top: 10px;
+}
+textarea {
+  min-height: 250px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+[type="checkbox"]:hover, [type="checkbox"] ~ label:hover {
+  cursor: pointer;
+  color: white;
+}
+#resetBtn, #submitBtn {
+  padding: 10px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+
+#newTeam {
+  display: block;
+  padding: 10px;
+  margin: 20px auto;
+  font-size: 1.5rem;;
+  background-color: #fce300;
+  border-radius: 10px;
+  border: none;
+}
+#newTeam:hover {
+  background-color: white;
+  cursor: pointer;
+}
+
+.card {
+  background-color: white;
+  width: 85%;
+  margin: 20px auto;
+  position: relative;
+}
+.delete {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+/* give a display of flex and align items horizontally */
+.flexAndCenter {
+  display: flex;
+  align-items: center;
+}
+
+/* Black background with yellow letters */
+.blackBack {
+  background-color: black;
+  color: #fce300;
+}

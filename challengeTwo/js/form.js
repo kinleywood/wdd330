@@ -8,7 +8,7 @@ export default function createForm(characters) {
     form.setAttribute("class", "form");
   const fieldset = document.createElement("fieldset");
   const legend = document.createElement("legend");
-    legend.textContent = "Create Team";
+    legend.textContent = "Create Your Team";
   const titleLabel = document.createElement("label");
     titleLabel.setAttribute("for", "teamName");
     titleLabel.textContent = "Team Name: ";
@@ -41,14 +41,17 @@ export default function createForm(characters) {
   fieldset.appendChild(title);
   fieldset.appendChild(h4);
   for(let i = 0; i < characters.length; i++) {
+    let characterDiv = document.createElement("div");
+    characterDiv.setAttribute("class", "check");
     let person = createPeopleChecklist(characters, i); 
     let personLabel = createPeopleLabel(characters, i); 
-    fieldset.appendChild(person); 
-    fieldset.appendChild(personLabel);
+    characterDiv.appendChild(person); 
+    characterDiv.appendChild(personLabel);
+    fieldset.appendChild(characterDiv);
   };
   fieldset.appendChild(textArea);
-  fieldset.appendChild(resetBtn);
   fieldset.appendChild(submit);
+  fieldset.appendChild(resetBtn);
 
   return form;
 }

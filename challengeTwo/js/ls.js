@@ -16,6 +16,7 @@ export function readFromLS() {
     if (key.substring(0,4) == "card") { 
       const div = document.createElement("div");
       div.setAttribute("id", key);
+      div.setAttribute("class", "card");
       div.innerHTML = value;
       teamsSect.appendChild(div);
 

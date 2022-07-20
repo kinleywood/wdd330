@@ -6,10 +6,12 @@ export default function createCard(array, cardId) {
   const button = document.createElement("button");
     button.textContent = "X";
     button.setAttribute("id", `delete${cardId}`);
+    button.setAttribute("class", `delete`);
   const h3 = document.createElement("h3");
     h3.textContent = array.teamName;
   const div = document.createElement("div");
     div.setAttribute("id", `card${cardId}`);
+    div.setAttribute("class", `card`);
   
 
   
