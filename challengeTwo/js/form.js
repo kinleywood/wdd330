@@ -3,7 +3,7 @@ export default function createForm(characters) {
   const form = document.createElement("form");
     form.setAttribute("action", `card.html`);
     form.setAttribute("method", `POST`);
-    form.setAttribute("target", `_blank`);
+    form.setAttribute("target", `popup_Window`);
     form.setAttribute("id", `myForm`);
     form.setAttribute("class", "form");
   const fieldset = document.createElement("fieldset");
@@ -67,4 +67,8 @@ function createPeopleLabel(characters, i) {
     personLabel.setAttribute("for", characters[i]);
     personLabel.textContent = characters[i];
   return personLabel;
+}
+
+function congrats() {
+  console.log("congrats");
 }

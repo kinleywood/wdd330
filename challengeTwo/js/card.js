@@ -1,3 +1,5 @@
+import writeToLS from "./ls.js";
+
 const teamsSect = document.querySelector(".teams");
 
 export default function createCard(array, cardId) {
@@ -31,6 +33,14 @@ export default function createCard(array, cardId) {
 
   const deleteBtn = document.getElementById(`delete${cardId}`);
   deleteBtn.addEventListener("click", () => {removeCard(`card${cardId}`)});
+
+  const divToText = document.getElementById(`card${cardId}`);
+  function htmlToText() {
+    const string = divToText.innerHTML;
+    return string;
+  }
+
+  writeToLS(`card${cardId}`, htmlToText());
 };
 
 function createPeople(person) {
@@ -40,8 +50,10 @@ function createPeople(person) {
   return p;
 };
 
-function removeCard(id) {
+export function removeCard(id) {
   const idDiv = document.getElementById(id);
   console.log(idDiv);
   idDiv.remove();
+  localStorage.removeItem(id);
 };
+
