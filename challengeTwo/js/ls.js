@@ -12,7 +12,6 @@ export function readFromLS() {
   const keys = Object.keys(localStorage);
   for (let key of keys) {
     const value = `${localStorage.getItem(key)}`;
-    console.log(value);
     if (key.substring(0,4) == "card") { 
       const div = document.createElement("div");
       div.setAttribute("id", key);
@@ -20,7 +19,8 @@ export function readFromLS() {
       div.innerHTML = value;
       teamsSect.appendChild(div);
 
-      const card = document.getElementById(key);
+      const card = document.getElementById(`delete${key.substring(4)}`);
+      console.log(`this is a card ${key.substring(4)}`);
       card.addEventListener("click", () => {removeCard(key)});
      }
   }}

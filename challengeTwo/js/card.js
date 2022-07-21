@@ -54,7 +54,6 @@ function createPeople(person) {
 
 export function removeCard(id) {
   const idDiv = document.getElementById(id);
-  console.log(idDiv);
   idDiv.remove();
   localStorage.removeItem(id);
 };
